@@ -672,8 +672,12 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
     const language = document.getElementById('language-selector').value;
     const currentUrl = new URL(window.location.href);
 
+    console.log('Language selected:', language); // Debug log for language selected
+
     // Update the URL to include ?lang=de or ?lang=en
     currentUrl.searchParams.set('lang', language);
+    
+    console.log('Updated URL:', currentUrl.toString()); // Debug log for updated URL
 
     // Reload the page with the new language in the URL
     window.location.href = currentUrl.toString();
@@ -683,17 +687,27 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
   function loadLanguageContent(language) {
     const jsonFile = language === 'de' ? 'de.json' : 'en.json'; // Choose the file based on the lang parameter
 
+    console.log('Loading language file:', jsonFile); // Debug log for the file being loaded
+
     // Fetch the corresponding language JSON file
     fetch(jsonFile)
-      .then(response => response.json())
+      .then(response => {
+        console.log('Fetch response status:', response.status); // Debug log for fetch response
+        if (!response.ok) {
+          throw new Error('Failed to load language file');
+        }
+        return response.json();
+      })
       .then(data => {
+        console.log('Language file data:', data); // Debug log for the JSON data
+
         // Update the page content with the fetched data
         document.getElementById('some-text-element').textContent = data.main_banner.heading;
         // Update other elements based on the fetched JSON
         // Example: document.getElementById('some-other-element').textContent = data.someOtherText;
       })
       .catch(error => {
-        console.error('Error loading language file:', error);
+        console.error('Error loading language file:', error); // Debug log for fetch errors
       });
   }
 
@@ -701,6 +715,10 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
   document.addEventListener('DOMContentLoaded', function() {
     const currentUrl = new URL(window.location.href);
     const language = currentUrl.searchParams.get('lang') || 'en'; // Default to 'en' if no param
+
+    console.log('Current language from URL:', language); // Debug log for language in URL
+
+    // Set the selector to the current language
     document.getElementById('language-selector').value = language;
 
     // Load the corresponding content from the JSON file
