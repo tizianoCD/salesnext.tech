@@ -558,7 +558,7 @@ function loadMainBannerContent(banner) {
 function loadAboutContent(about) {
     setTextContent('#about-heading', about.heading.main);
     setTextContent('#about-subheading', about.heading.sub);
-    setTextContent('#description', about.description);
+    setTextContent('#about-description', about.description);
     setTextContent('#guiding-heading', about.guiding_heading);
     
     // Skills
@@ -591,6 +591,7 @@ function loadServicesContent(services) {
         
         setTextContent(`#service-${num}-name`, serviceContent.title.split(':')[0]);
         setTextContent(`#service-${num}-title`, serviceContent.title);
+        setTextContent(`#service-${num}-description`, serviceContent.description);
         
         const featuresElement = document.querySelector(`#service-${num}-features`);
         if (featuresElement) {
