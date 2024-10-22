@@ -499,56 +499,141 @@ async function loadLanguageContent() {
         }
         const content = await response.json();
         
-        // Populate main banner content
-        document.querySelector('#main-banner-heading').textContent = content.main_banner.heading;
-        document.querySelector('#main-banner-subheading').textContent = content.main_banner.subheading;
-        document.querySelector('#contact-button').textContent = content.main_banner.contact_button;
-
-        // Populate about section
-        document.querySelector('#about-heading').textContent = content.about_section.heading.main;
-        document.querySelector('#about-subheading').textContent = content.about_section.heading.sub;
-        document.querySelector('#guiding-heading').textContent = content.about_section.guiding_heading;
+        // Load header content
+        loadHeaderContent(content.header);
         
-        // Populate skills
-        document.querySelector('#skill-development').textContent = content.about_section.skills.development;
-        document.querySelector('#skill-configuration').textContent = content.about_section.skills.configuration;
-        document.querySelector('#skill-support').textContent = content.about_section.skills.support;
-
-        // Populate services section
-        document.querySelector('#services-heading').textContent = content.services_section.heading.main;
-        document.querySelector('#services-subheading').textContent = content.services_section.heading.sub;
-
-        // Populate service names
-        document.querySelector('#service-1-name').textContent = content.services_section.services.sales_cloud.title.split(':')[0];
-        document.querySelector('#service-2-name').textContent = content.services_section.services.marketing_cloud.title.split(':')[0];
-        document.querySelector('#service-3-name').textContent = content.services_section.services.service_cloud.title.split(':')[0];
-        document.querySelector('#service-4-name').textContent = content.services_section.services.experience_cloud.title.split(':')[0];
-        document.querySelector('#service-5-name').textContent = content.services_section.services.integrations.title.split(':')[0];
-
-        // Populate service details
-        document.querySelector('#service-1-title').textContent = content.services_section.services.sales_cloud.title;
-        document.querySelector('#service-1-features').innerHTML = createBenefitsList(content.services_section.services.sales_cloud.benefits);
-
-        document.querySelector('#service-2-title').textContent = content.services_section.services.marketing_cloud.title;
-        document.querySelector('#service-2-features').innerHTML = createBenefitsList(content.services_section.services.marketing_cloud.benefits);
-
-        document.querySelector('#service-3-title').textContent = content.services_section.services.service_cloud.title;
-        document.querySelector('#service-3-features').innerHTML = createBenefitsList(content.services_section.services.service_cloud.benefits);
-
-        document.querySelector('#service-4-title').textContent = content.services_section.services.experience_cloud.title;
-        document.querySelector('#service-4-features').innerHTML = createBenefitsList(content.services_section.services.experience_cloud.benefits);
-
-        document.querySelector('#service-5-title').textContent = content.services_section.services.integrations.title;
-        document.querySelector('#service-5-features').innerHTML = createBenefitsList(content.services_section.services.integrations.benefits);
-
-        // Populate contact section
-        document.querySelector('#contact-heading').textContent = content.contact_section.heading.main;
-        document.querySelector('#contact-subheading').textContent = content.contact_section.heading.sub;
-        document.querySelector('#contact-email').textContent = content.contact_section.contact_info.email.value;
-        document.querySelector('#contact-location').textContent = content.contact_section.contact_info.location.value;
+        // Load main banner content
+        loadMainBannerContent(content.main_banner);
+        
+        // Load about section
+        loadAboutContent(content.about_section);
+        
+        // Load services section
+        loadServicesContent(content.services_section);
+        
+        // Load contact section
+        loadContactContent(content.contact_section);
+        
+        // Load footer content
+        loadFooterContent(content.footer);
 
     } catch (error) {
         console.error('Error loading language content:', error);
+    }
+}
+
+// Load header content
+function loadHeaderContent(header) {
+    // Logo alt text
+    const logo = document.querySelector('.logo img');
+    if (logo) logo.alt = header.logo_alt;
+    
+    // Menu items
+    const homeLink = document.querySelector('#home-link');
+    if (homeLink) homeLink.textContent = header.menu.home;
+    
+    const aboutLink = document.querySelector('#about-link');
+    if (aboutLink) aboutLink.textContent = header.menu.about;
+    
+    const servicesLink = document.querySelector('#services-link');
+    if (servicesLink) servicesLink.textContent = header.menu.services;
+    
+    const contactLink = document.querySelector('#contact-link');
+    if (contactLink) contactLink.textContent = header.menu.contact_us;
+}
+
+// Load main banner content
+function loadMainBannerContent(banner) {
+    setTextContent('#main-banner-heading', banner.heading);
+    setTextContent('#main-banner-subheading', banner.subheading);
+    setTextContent('#contact-button', banner.contact_button);
+    
+    // Banner image alt text
+    const bannerImg = document.querySelector('.right-image img');
+    if (bannerImg) bannerImg.alt = banner.image_alt;
+}
+
+// Load about section content
+function loadAboutContent(about) {
+    setTextContent('#about-heading', about.heading.main);
+    setTextContent('#about-subheading', about.heading.sub);
+    setTextContent('#guiding-heading', about.guiding_heading);
+    
+    // Skills
+    setTextContent('#skill-development', about.skills.development);
+    setTextContent('#skill-configuration', about.skills.configuration);
+    setTextContent('#skill-support', about.skills.support);
+    
+    // About image alt text
+    const aboutImg = document.querySelector('.about-left-image img');
+    if (aboutImg) aboutImg.alt = about.image_alt;
+}
+
+// Load services section content
+function loadServicesContent(services) {
+    setTextContent('#services-heading', services.heading.main);
+    setTextContent('#services-subheading', services.heading.sub);
+    
+    // Service names in tabs
+    const servicesList = [
+        'sales_cloud',
+        'marketing_cloud',
+        'service_cloud',
+        'experience_cloud',
+        'integrations'
+    ];
+    
+    servicesList.forEach((service, index) => {
+        const num = index + 1;
+        const serviceContent = services.services[service];
+        
+        setTextContent(`#service-${num}-name`, serviceContent.title.split(':')[0]);
+        setTextContent(`#service-${num}-title`, serviceContent.title);
+        
+        const featuresElement = document.querySelector(`#service-${num}-features`);
+        if (featuresElement) {
+            featuresElement.innerHTML = createBenefitsList(serviceContent.benefits);
+        }
+        
+        // Service images alt text
+        const serviceImg = document.querySelector(`.services-image-0${num} img`);
+        if (serviceImg) serviceImg.alt = serviceContent.image_alt;
+    });
+}
+
+// Load contact section content
+function loadContactContent(contact) {
+    setTextContent('#contact-heading', contact.heading.main);
+    setTextContent('#contact-subheading', contact.heading.sub);
+    
+    // Form labels
+    const formLabels = document.querySelectorAll('.fill-form label');
+    if (formLabels.length > 0) {
+        formLabels[0].textContent = contact.form.labels.name;
+        formLabels[1].textContent = contact.form.labels.email;
+        formLabels[2].textContent = contact.form.labels.company;
+        formLabels[3].textContent = contact.form.labels.message;
+    }
+    
+    // Submit button
+    const submitBtn = document.querySelector('.fill-form button');
+    if (submitBtn) submitBtn.textContent = contact.form.button;
+    
+    // Contact info
+    const emailLink = document.querySelector('#contact-email');
+    if (emailLink) {
+        emailLink.textContent = contact.contact_info.email.value;
+        emailLink.href = `mailto:${contact.contact_info.email.value}`;
+    }
+    
+    setTextContent('#contact-location', contact.contact_info.location.value);
+}
+
+// Load footer content
+function loadFooterContent(footer) {
+    const footerElement = document.querySelector('footer');
+    if (footerElement) {
+        footerElement.textContent = footer.text;
     }
 }
 
@@ -557,8 +642,18 @@ function createBenefitsList(benefits) {
     return benefits.map(benefit => `<p><i class="fa fa-check"></i> ${benefit}</p>`).join('');
 }
 
+// Helper function to safely set text content
+function setTextContent(selector, text) {
+    const element = document.querySelector(selector);
+    if (element && text) {
+        element.textContent = text;
+    }
+}
+
 // Load content when DOM is ready
 document.addEventListener('DOMContentLoaded', loadLanguageContent);
+
+
 </script>
 
 
