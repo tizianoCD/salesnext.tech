@@ -665,15 +665,16 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
 
 
 
+
 <script>
   // Function to switch the language and update the URL parameter
   function switchLanguage() {
     const language = document.getElementById('language-selector').value;
     const currentUrl = new URL(window.location.href);
 
-    // Update the URL to include ?lang=de or ?lang=en without redirecting
+    // Update the URL to include ?lang=de or ?lang=en without reloading the page
     currentUrl.searchParams.set('lang', language);
-    window.history.pushState({}, '', currentUrl);
+    window.history.pushState({}, '', currentUrl); // This will update the URL with ?lang=<value>
 
     // Load the language content dynamically
     loadLanguageContent(language);
@@ -684,11 +685,11 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
     if (language === 'de') {
       // Load German content
       document.getElementById('some-text-element').textContent = 'Willkommen bei SalesNext!';
-      // Update other text elements as needed...
+      // Update other text elements for German if needed...
     } else {
       // Load English content (default)
       document.getElementById('some-text-element').textContent = 'Welcome to SalesNext!';
-      // Update other text elements as needed...
+      // Update other text elements for English if needed...
     }
   }
 
@@ -705,7 +706,6 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
   // Event listener for language selector change
   document.getElementById('language-selector').addEventListener('change', switchLanguage);
 </script>
-
 
 
 
