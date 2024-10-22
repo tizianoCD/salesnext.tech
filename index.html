@@ -443,11 +443,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p></p>
+                <p id="footer-text"></p> <!-- Give it an ID for easy access -->
             </div>
         </div>
     </div>
 </footer>
+
 
 
   <!-- Scripts -->
@@ -531,7 +532,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const loadLanguage = async (lang) => {
       console.log(`Attempting to load language: ${lang}`); // Log the language being loaded
       try {
+<<<<<<< HEAD
+          const response = await fetch(`assets/js/${lang}.json`); // Correct path to the JSON files
+=======
           const response = await fetch(`assets/js/${lang}.json`); // Corrected path
+>>>>>>> b5fe6908aba1b9691ee7075120c2ee59d21c200b
           console.log(`Fetch response for ${lang}:`, response); // Log the response
 
           // Check if the response is OK
@@ -543,7 +548,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const data = await response.json();
           console.log(`Loaded data for ${lang}:`, data); // Log the loaded data
 
-          // Update your HTML content here (example)
+          // Update the main content here
           document.getElementById('content').innerHTML = `
               <h1>${data.main_banner.heading}</h1>
               <p>${data.main_banner.description}</p>
@@ -554,10 +559,18 @@ document.addEventListener('DOMContentLoaded', function() {
                   <li>${data.header.menu.contact_us}</li>
               </ul>
           `;
+<<<<<<< HEAD
+
+          // Load footer
+          document.getElementById('footer-text').innerText = data.footer.text; // Update footer text
+          console.log(`Footer text updated to: ${data.footer.text}`); // Log the footer update
+
+=======
 
           // Load footer
           document.querySelector('footer p').innerText = data.footer.text; // Update footer text
 
+>>>>>>> b5fe6908aba1b9691ee7075120c2ee59d21c200b
       } catch (error) {
           console.error('Error loading language file:', error); // Log any error during fetching or processing
       }
