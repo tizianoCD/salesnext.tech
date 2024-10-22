@@ -546,6 +546,7 @@ function loadHeaderContent(header) {
 function loadMainBannerContent(banner) {
     setTextContent('#main-banner-heading', banner.heading);
     setTextContent('#main-banner-subheading', banner.subheading);
+    setTextContent('#main-banner-description', banner.description);
     setTextContent('#contact-button', banner.contact_button);
     
     // Banner image alt text
@@ -557,6 +558,7 @@ function loadMainBannerContent(banner) {
 function loadAboutContent(about) {
     setTextContent('#about-heading', about.heading.main);
     setTextContent('#about-subheading', about.heading.sub);
+    setTextContent('#description', about.description);
     setTextContent('#guiding-heading', about.guiding_heading);
     
     // Skills

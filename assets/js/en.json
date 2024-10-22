@@ -9,7 +9,7 @@
     "header": {
       "logo_alt": "SalesNext Consulting Logo",
       "menu": {
-        "home": "TEST_LOADED_Home",
+        "home": "Home",
         "about": "About",
         "services": "Services",
         "contact_us": "Contact Us",
@@ -29,7 +29,7 @@
       }
     },
     "main_banner": {
-      "heading": "TEST_ENGLISH_Your Salesforce Consulting Experts",
+      "heading": "Your Salesforce Consulting Experts",
       "subheading": "Boost Business Performance with Tailored Solutions",
       "description": "SalesNext Consulting provides expert Salesforce implementations and custom solutions to streamline your operations and drive growth.",
       "contact_button": "Contact Us",
@@ -160,6 +160,6 @@
       }
     },
     "footer": {
-      "text": "TEST_Copyright © 2024 Salesnext Gmbh. All Rights Reserved."
+      "text": "Copyright © 2024 Salesnext Gmbh. All Rights Reserved."
     }
   }
