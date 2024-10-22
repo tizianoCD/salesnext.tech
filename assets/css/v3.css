@@ -210,7 +210,7 @@ body {
 
 .border-first-button a {
   display: inline-block !important;
-  padding: 10px 20px !important;
+  padding: 0 20px !important;
   color: #ffffff !important;
   background-color: #4da6e7;
   border: 1px solid #0264aa !important;
@@ -2307,9 +2307,18 @@ textarea {
 
 
 #language-selector {
+
+
+  display: inline-block !important;
+  color: #ffffff !important;
+  background-color: #4da6e7;
+  border: 1px solid #0264aa !important;
+  border-radius: 23px;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  transition: all .5s;
   padding: 5px 10px;
   font-size: 16px;
-  background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 5px;
