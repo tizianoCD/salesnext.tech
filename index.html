@@ -702,16 +702,24 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
       .then(data => {
         console.log('Language file data:', data); // Debug log for the JSON data
 
-        // Check if the element exists before trying to update it
-        const headingElement = document.getElementById('some-text-element');
-        if (headingElement) {
-          headingElement.textContent = data.main_banner.heading; // Update the element's text
-        } else {
-          console.error('Element with ID "some-text-element" not found.'); // Debug log for missing element
-        }
+        // Check and log the IDs of elements that are going to be updated
+        const idsToCheck = ['some-text-element', 'another-element-id']; // Add more IDs as needed
+        idsToCheck.forEach(id => {
+          const element = document.getElementById(id);
+          if (element) {
+            console.log(`Found element with ID: ${id}`);
+            // Update the element's text with the fetched data
+            if (id === 'some-text-element') {
+              element.textContent = data.main_banner.heading; // Update the element's text
+            }
+            // You can add more conditions here for other elements
+          } else {
+            console.error(`Element with ID "${id}" not found.`); // Debug log for missing element
+          }
+        });
 
-        // Update other elements based on the fetched JSON
-        // Example: document.getElementById('some-other-element').textContent = data.someOtherText;
+        // Example: Update other elements based on the fetched JSON
+        // document.getElementById('some-other-element').textContent = data.someOtherText;
       })
       .catch(error => {
         console.error('Error loading language file from path:', filePath, 'Error:', error); // Debug log for fetch errors
@@ -735,6 +743,7 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
   // Event listener for language selector change
   document.getElementById('language-selector').addEventListener('change', switchLanguage);
 </script>
+
 
 
 
