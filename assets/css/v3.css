@@ -2303,3 +2303,20 @@ input[type="text"], input[type="email"], textarea {
 textarea {
   height: 100px;
 }
+
+
+
+#language-selector {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#language-selector option {
+  background-color: white;
+  color: #007BFF;
+}

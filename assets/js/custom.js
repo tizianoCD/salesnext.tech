@@ -156,3 +156,16 @@ $('.scroll-to-section a[href]').on('click', function(e) {
     });
   }
 })(window.jQuery);
+
+
+function switchLanguage() {
+  const language = document.getElementById('language-selector').value;
+
+  if (language === 'de') {
+    // For German
+    window.location.href = '/de'; // Replace '/de' with the URL path for the German version of the site
+  } else {
+    // For English (default)
+    window.location.href = '/'; // Replace '/' with the URL path for the English version
+  }
+}
