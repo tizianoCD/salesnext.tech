@@ -441,115 +441,152 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    (function () {
-      emailjs.init('KAfA-1eqc2SFs2m3Q');
-    })();
-  </script>
-  
-  <script>
-    let isSubmitting = false; // Prevent multiple form submissions flag
-  
-    const handleForm = async (e) => {
-      e.preventDefault(); // Prevent default form submission behavior
-  
-      // If already submitting, prevent multiple submissions
-      if (isSubmitting) {
+<script>
+  (function () {
+    emailjs.init('KAfA-1eqc2SFs2m3Q');
+  })();
+</script>
+
+<script>
+  let isSubmitting = false; // Prevent multiple form submissions flag
+
+  const handleForm = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // If already submitting, prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
+
+    isSubmitting = true; // Set the flag to prevent duplicate submissions
+
+    const form = document.getElementById('contact-form');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const loadingText = document.getElementById('loading-text'); // Placeholder for the loading text
+
+    if (!submitButton) {
+      console.error('Submit button not found in the form!');
+      isSubmitting = false;
+      return;
+    }
+
+    submitButton.disabled = true; // Disable the submit button to prevent multiple submissions
+    loadingText.innerText = 'Loading...'; // Show the loading message
+
+    try {
+      // Send email using EmailJS
+      await emailjs.sendForm('service_cysqmp7', 'template_cgnfvia', form);
+
+      // Hide the form and show success message
+      form.style.display = 'none'; // Hide the form
+      loadingText.innerText = 'Email sent successfully!'; // Show success message
+    } catch (error) {
+      console.error('Error occurred while sending email:', error); // Log the error in case of failure
+      loadingText.innerText = 'Failed to send email. Please try again later.'; // Show error message
+    } finally {
+      submitButton.disabled = false; // Re-enable the submit button after the process completes
+      isSubmitting = false; // Reset the flag to allow further submissions
+    }
+  };
+
+  // Load content from en.json
+  const loadContent = async () => {
+    console.log('Loading content from en.json');
+    try {
+      const response = await fetch('assets/js/en.json'); // Ensure the path is correct
+      if (!response.ok) {
+        console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
         return;
       }
-  
-      isSubmitting = true; // Set the flag to prevent duplicate submissions
-  
-      const form = document.getElementById('contact-form');
-      const submitButton = form.querySelector('button[type="submit"]');
-      const loadingText = document.getElementById('loading-text'); // Placeholder for the loading text
-  
-      if (!submitButton) {
-        console.error('Submit button not found in the form!');
-        isSubmitting = false;
-        return;
-      }
-  
-      submitButton.disabled = true; // Disable the submit button to prevent multiple submissions
-      loadingText.innerText = 'Loading...'; // Show the loading message
-  
-      try {
-        // Send email using EmailJS
-        await emailjs.sendForm('service_cysqmp7', 'template_cgnfvia', form);
-  
-        // Hide the form and show success message
-        form.style.display = 'none'; // Hide the form
-        loadingText.innerText = 'Email sent successfully!'; // Show success message
-      } catch (error) {
-        console.error('Error occurred while sending email:', error); // Log the error in case of failure
-        loadingText.innerText = 'Failed to send email. Please try again later.'; // Show error message
-      } finally {
-        submitButton.disabled = false; // Re-enable the submit button after the process completes
-        isSubmitting = false; // Reset the flag to allow further submissions
-      }
-    };
-  
-    // Load content from en.json
-    const loadContent = async () => {
-      console.log('Loading content from en.json');
-      try {
-        const response = await fetch('assets/js/en.json'); // Ensure the path is correct
-        if (!response.ok) {
-          console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
-          return;
+      const data = await response.json();
+
+      // Populate various sections from the loaded JSON data
+      // Header
+      document.getElementById('logo-alt').alt = data.header.logo_alt;
+      document.getElementById('menu-home').innerText = data.header.menu.home;
+      document.getElementById('menu-about').innerText = data.header.menu.about;
+      document.getElementById('menu-services').innerText = data.header.menu.services;
+      document.getElementById('menu-contact-us').innerText = data.header.menu.contact_us;
+      document.getElementById('language-selector-label').innerText = data.header.menu.language_selector.label;
+      document.getElementById('language-selector-en').innerText = data.header.menu.language_selector.en;
+      document.getElementById('language-selector-de').innerText = data.header.menu.language_selector.de;
+
+      // Preloader
+      document.getElementById('loading-text').innerText = data.preloader.loading_text;
+
+      // Main Banner
+      document.getElementById('main-banner-heading').innerText = data.main_banner.heading;
+      document.getElementById('main-banner-subheading').innerText = data.main_banner.subheading;
+      document.getElementById('main-banner-description').innerText = data.main_banner.description;
+      document.getElementById('main-banner-contact-button').innerText = data.main_banner.contact_button;
+      document.getElementById('main-banner-image').alt = data.main_banner.image_alt;
+
+      // About Section
+      document.getElementById('about-heading').innerText = data.about_section.heading.main;
+      document.getElementById('about-subheading').innerText = data.about_section.heading.sub;
+      document.getElementById('about-description').innerText = data.about_section.description;
+      document.getElementById('guiding-heading').innerText = data.about_section.guiding_heading;
+      document.getElementById('skill-development').innerText = data.about_section.skills.development;
+      document.getElementById('skill-configuration').innerText = data.about_section.skills.configuration;
+      document.getElementById('skill-support').innerText = data.about_section.skills.support;
+      document.getElementById('about-image').alt = data.about_section.image_alt;
+
+      // Services Section
+      document.getElementById('services-heading').innerText = data.services_section.heading.main;
+      document.getElementById('services-subheading').innerText = data.services_section.heading.sub;
+
+      // Loop through services and populate content
+      const services = data.services_section.services;
+      for (const key in services) {
+        if (services.hasOwnProperty(key)) {
+          const service = services[key];
+          const serviceId = key.replace('_', '-'); // Replace underscores with hyphens for IDs
+          document.getElementById(`service-${serviceId}-title`).innerText = service.title;
+          document.getElementById(`service-${serviceId}-description`).innerText = service.description;
+          document.getElementById(`service-${serviceId}-benefits`).innerHTML = service.benefits.map(benefit => `<li>${benefit}</li>`).join('');
+          document.getElementById(`service-${serviceId}-footer`).innerText = service.footer;
+          document.getElementById(`service-${serviceId}-image`).alt = service.image_alt;
         }
-        const data = await response.json();
-  
-        // Populate various sections
-        document.getElementById('footer-text').innerText = data.footer.text;
-        document.getElementById('contact-heading').innerText = data.contact.heading;
-        document.getElementById('contact-subheading').innerText = data.contact.subheading;
-        document.getElementById('contact-email').innerText = data.contact.email.text;
-        document.getElementById('contact-email').href = `mailto:${data.contact.email.link}`; // Set mailto link
-        document.getElementById('contact-location').innerText = data.contact.location;
-  
-        document.getElementById('main-banner-heading').innerText = data.banner.heading;
-        document.getElementById('main-banner-subheading').innerText = data.banner.subheading;
-        document.getElementById('main-banner-description').innerText = data.banner.description;
-        document.getElementById('contact-button').innerText = data.banner.contactButton;
-  
-        document.getElementById('about-heading').innerText = data.about.heading;
-        document.getElementById('about-subheading').innerText = data.about.subheading;
-        document.getElementById('about-description').innerText = data.about.description;
-        document.getElementById('guiding-heading').innerText = data.about.guidingHeading;
-        document.getElementById('skill-development').innerText = data.about.skills.development;
-        document.getElementById('skill-configuration').innerText = data.about.skills.configuration;
-        document.getElementById('skill-support').innerText = data.about.skills.support;
-  
-        document.getElementById('services-heading').innerText = data.services.heading;
-        document.getElementById('services-subheading').innerText = data.services.subheading;
-        for (let i = 1; i <= 5; i++) {
-          document.getElementById(`service-${i}-name`).innerText = data.services[`service${i}`].name;
-          document.getElementById(`service-${i}-title`).innerText = data.services[`service${i}`].title;
-          document.getElementById(`service-${i}-description`).innerText = data.services[`service${i}`].description;
-          document.getElementById(`service-${i}-features`).innerHTML = data.services[`service${i}`].features.map(feature => `<div>${feature}</div>`).join('');
-          document.getElementById(`service-${i}-conclusion`).innerText = data.services[`service${i}`].conclusion;
-        }
-      } catch (error) {
-        console.error('Error loading content:', error);
       }
-    };
-  
-    // Attach event listener for form submission
-    document.addEventListener('DOMContentLoaded', function() {
-      const formElement = document.getElementById('contact-form');
-  
-      if (formElement) {
-        formElement.removeEventListener('submit', handleForm); // Remove any existing listener
-        formElement.addEventListener('submit', handleForm); // Attach the handleForm to the submit event
-      } else {
-        console.error('Form element not found!');
-      }
-  
-      // Load content on initial load
-      loadContent();
-    });
-  </script>
+
+      // Contact Section
+      document.getElementById('contact-heading').innerText = data.contact_section.heading.main;
+      document.getElementById('contact-subheading').innerText = data.contact_section.heading.sub;
+      document.getElementById('contact-form-name-label').innerText = data.contact_section.form.labels.name;
+      document.getElementById('contact-form-email-label').innerText = data.contact_section.form.labels.email;
+      document.getElementById('contact-form-company-label').innerText = data.contact_section.form.labels.company;
+      document.getElementById('contact-form-message-label').innerText = data.contact_section.form.labels.message;
+      document.getElementById('contact-form-button').innerText = data.contact_section.form.button;
+      document.getElementById('contact-info-email-label').innerText = data.contact_section.contact_info.email.label;
+      document.getElementById('contact-info-email-value').innerText = data.contact_section.contact_info.email.value;
+      document.getElementById('contact-info-location-label').innerText = data.contact_section.contact_info.location.label;
+      document.getElementById('contact-info-location-value').innerText = data.contact_section.contact_info.location.value;
+      document.getElementById('contact-map').src = data.contact_section.map.iframe_src;
+
+      // Footer
+      document.getElementById('footer-text').innerText = data.footer.text;
+
+    } catch (error) {
+      console.error('Error loading content:', error);
+    }
+  };
+
+  // Attach event listener for form submission
+  document.addEventListener('DOMContentLoaded', function() {
+    const formElement = document.getElementById('contact-form');
+
+    if (formElement) {
+      formElement.removeEventListener('submit', handleForm); // Remove any existing listener
+      formElement.addEventListener('submit', handleForm); // Attach the handleForm to the submit event
+    } else {
+      console.error('Form element not found!');
+    }
+
+    // Load content on initial load
+    loadContent();
+  });
+</script>
+
   
 
 
