@@ -53,7 +53,7 @@ $('.scroll-to-section a[href]').on('click', function(e) {
   var ref = $(this).attr('href');  // Get the href attribute (e.g., "about")
   console.log('Anchor clicked, href:', ref);  // Debug log for href
 
-  var target = $('#' + ref);  // Find the target element using the href as ID (e.g., #about)
+  var target = $(ref);  // Find the target element using the href as ID (e.g., #about)
   console.log('Target element:', target);  // Debug log for target
 
   if (target.length) {
