@@ -47,32 +47,40 @@
 
 
  // Menu elevator animation (without changing URL hash)
-// Menu elevator animation (distinguishing between hash and target)
-// Menu elevator animation (handling href without #)
 $('.scroll-to-section a[href]').on('click', function(e) {
   e.preventDefault();  // Prevent default anchor behavior
 
   var ref = $(this).attr('href');  // Get the href attribute (e.g., "about")
+  console.log('Anchor clicked, href:', ref);  // Debug log for href
+
   var target = $('#' + ref);  // Find the target element using the href as ID (e.g., #about)
-  
+  console.log('Target element:', target);  // Debug log for target
+
   if (target.length) {
     var width = $(window).width();
+    console.log('Window width:', width);  // Debug log for window width
 
     // Close mobile menu if applicable
     if (width < 991) {
+      console.log('Closing mobile menu since width < 991');
       $('.menu-trigger').removeClass('active');
       $('.header-area .nav').slideUp(200);
     }
 
     // Smooth scroll to the target section
+    console.log('Scrolling to target offset:', target.offset().top + 1);  // Debug log for scrolling position
     $('html, body').animate({
       scrollTop: target.offset().top + 1  // Scroll to the target element
     }, 700, function() {
+      console.log('Scroll animation completed');  // Debug log after animation completion
       // You can optionally update the URL here, but it won't include the #
       // window.location.hash = ref;
     });
+  } else {
+    console.warn('Target element not found for href:', ref);  // Warn if target not found
   }
 });
+
 
 
 
