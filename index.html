@@ -525,6 +525,103 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
+//language translation selector
+<script>
+// Sample translations object
+const translations = {
+  "en": {
+    "header": {
+      "logo_alt": "SalesNext Consulting Logo",
+      "menu": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact_us": "Contact Us"
+      }
+    },
+    "main_banner": {
+      "heading": "Your Salesforce Consulting Experts",
+      "subheading": "Boost Business Performance with Tailored Solutions",
+      "description": "SalesNext Consulting provides expert Salesforce implementations and custom solutions to streamline your operations and drive growth.",
+      "contact_button": "Contact Us"
+    },
+    "about_section": {
+      "heading": "About Us",
+      "description": "SalesNext is a consulting firm specializing in Salesforce implementation and CRM solutions."
+    },
+    "footer": {
+      "text": "Copyright © 2024 Salesnext GmbH. All Rights Reserved."
+    }
+  },
+  "de": {
+    "header": {
+      "logo_alt": "SalesNext Consulting Logo",
+      "menu": {
+        "home": "Startseite",
+        "about": "Über Uns",
+        "services": "Dienstleistungen",
+        "contact_us": "Kontaktieren Sie Uns"
+      }
+    },
+    "main_banner": {
+      "heading": "Ihre Salesforce-Beratungsexperten",
+      "subheading": "Geschäftsleistung mit maßgeschneiderten Lösungen steigern",
+      "description": "SalesNext Consulting bietet fachkundige Salesforce-Implementierungen und maßgeschneiderte Lösungen zur Optimierung Ihrer Abläufe und zur Förderung des Wachstums.",
+      "contact_button": "Kontaktieren Sie Uns"
+    },
+    "about_section": {
+      "heading": "Über Uns",
+      "description": "SalesNext ist ein Beratungsunternehmen, das sich auf die Implementierung von Salesforce und CRM-Lösungen spezialisiert hat."
+    },
+    "footer": {
+      "text": "Urheberrecht © 2024 Salesnext GmbH. Alle Rechte vorbehalten."
+    }
+  }
+};
+
+// Function to update content based on selected language
+function updateContent(language) {
+  const langData = translations[language];
+
+  // Update header menu
+  document.getElementById("home").textContent = langData.header.menu.home;
+  document.getElementById("about").textContent = langData.header.menu.about;
+  document.getElementById("services").textContent = langData.header.menu.services;
+  document.getElementById("contact_us").textContent = langData.header.menu.contact_us;
+
+  // Update main banner
+  document.getElementById("banner_heading").textContent = langData.main_banner.heading;
+  document.getElementById("banner_subheading").textContent = langData.main_banner.subheading;
+  document.getElementById("banner_description").textContent = langData.main_banner.description;
+  document.getElementById("contact_button").textContent = langData.main_banner.contact_button;
+
+  // Update about section
+  document.getElementById("about_heading").textContent = langData.about_section.heading;
+  document.getElementById("about_description").textContent = langData.about_section.description;
+
+  // Update footer
+  document.getElementById("footer_text").textContent = langData.footer.text;
+}
+
+// Language selector event listener
+document.getElementById("language_selector").addEventListener("change", function () {
+  const selectedLanguage = this.value;
+  updateContent(selectedLanguage);
+});
+
+// Automatically load the appropriate language on page load
+const currentUrl = window.location.pathname;
+if (currentUrl.includes('/de')) {
+  updateContent("de");
+  document.getElementById("language_selector").value = "de"; // Set the selector to German
+} else {
+  updateContent("en");
+  document.getElementById("language_selector").value = "en"; // Set the selector to English
+}
+
+
+</script>
+
   
   
 

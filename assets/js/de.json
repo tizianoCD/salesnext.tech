@@ -1,0 +1,165 @@
+{
+    "meta": {
+      "charset": "UTF-8",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "",
+      "author": "",
+      "title": "SalesNext Consulting - Geschäftswachstum und Innovation fördern"
+    },
+    "header": {
+      "logo_alt": "SalesNext Consulting Logo",
+      "menu": {
+        "home": "Startseite",
+        "about": "Über Uns",
+        "services": "Dienstleistungen",
+        "contact_us": "Kontaktieren Sie Uns",
+        "language_selector": {
+          "label": "Sprache auswählen",
+          "en": "Englisch",
+          "de": "Deutsch"
+        }
+      }
+    },
+    "preloader": {
+      "loading_text": "Wird geladen...",
+      "dots": {
+        "dot1": "",
+        "dot2": "",
+        "dot3": ""
+      }
+    },
+    "main_banner": {
+      "heading": "Ihre Salesforce-Beratungsexperten",
+      "subheading": "Geschäftsleistung mit maßgeschneiderten Lösungen steigern",
+      "description": "SalesNext Consulting bietet fachkundige Salesforce-Implementierungen und maßgeschneiderte Lösungen zur Optimierung Ihrer Abläufe und zur Förderung des Wachstums.",
+      "contact_button": "Kontaktieren Sie Uns",
+      "image_alt": "SalesNext Bannerbild"
+    },
+    "about_section": {
+      "heading": {
+        "main": "Über Uns",
+        "sub": "Wer ist die SalesNext-Agentur"
+      },
+      "description": "SalesNext ist ein Beratungsunternehmen, das sich auf die Implementierung von Salesforce und CRM-Lösungen spezialisiert hat. Wir helfen Unternehmen dabei, Verkaufsprozesse zu optimieren, Kundenbeziehungen zu verbessern und Wachstum durch maßgeschneiderte Salesforce-Integrationen zu fördern. Unser Expertenteam setzt sich dafür ein, Abläufe zu optimieren, die Produktivität zu steigern und langfristigen Erfolg zu gewährleisten.",
+      "guiding_heading": "Wir begleiten Sie durch:",
+      "skills": {
+        "development": "Entwicklung",
+        "configuration": "Konfiguration",
+        "support": "Unterstützung"
+      },
+      "image_alt": "SalesNext Über Uns Bild"
+    },
+    "services_section": {
+      "heading": {
+        "main": "Unsere Dienstleistungen",
+        "sub": "Was Unsere Agentur Bietet"
+      },
+      "services": {
+        "sales_cloud": {
+          "title": "Sales Cloud: Steigern Sie Ihre Vertriebsleistung",
+          "description": "Sales Cloud ist die leistungsstarke Vertriebsautomatisierungsplattform von Salesforce, die Unternehmen dabei hilft, ihre Vertriebsleistung zu steigern. Sie bietet Werkzeuge zur Verwaltung von Leads, zur Nachverfolgung von Möglichkeiten und zur Optimierung von Vertriebsprozessen, alles an einem Ort. Mit robusten Funktionen für Prognosen, Zusammenarbeit und Analysen ermöglicht die Sales Cloud Vertriebsteams, Deals schneller abzuschließen und datengestützte Entscheidungen zu treffen.",
+          "benefits": [
+            "Lead-Management",
+            "Chancenmanagement",
+            "Vertriebsanalysen",
+            "Zusammenarbeitstools",
+            "Anpassung",
+            "Optimierte Vorlage"
+          ],
+          "footer": "Transformieren Sie Ihren Vertriebsansatz mit der Sales Cloud und fördern Sie nachhaltiges Wachstum.",
+          "image_alt": "Sales Cloud Dienstleistungsbild"
+        },
+        "marketing_cloud": {
+          "title": "Marketing Cloud: Transformieren Sie Ihre Marketingstrategie",
+          "description": "Marketing Cloud ist die All-in-One-Digitalmarketingplattform von Salesforce, die Unternehmen dabei hilft, über jeden Kanal mit Kunden in Kontakt zu treten. Sie bietet Vermarktern Werkzeuge für personalisierte Kundenreisen, Echtzeit-Engagement und datengestützte Einblicke. Mit der Marketing Cloud können Sie bedeutungsvolle Beziehungen zu Ihrem Publikum durch gezielte Nachrichten und umfassende Automatisierung aufbauen.",
+          "benefits": [
+            "Journey Builder",
+            "E-Mail-Marketing",
+            "Social-Media-Integration",
+            "Kundendatenplattform (CDP)",
+            "Zielgruppensegmentierung",
+            "Automatisierungsstudio"
+          ],
+          "footer": "Verbessern Sie Ihre Marketingstrategie mit der Marketing Cloud und fördern Sie wirkungsvolles, personalisiertes Kundenengagement.",
+          "image_alt": "Marketing Cloud Dienstleistungsbild"
+        },
+        "service_cloud": {
+          "title": "Service Cloud: Verbessern Sie den Kundenservice und die Zufriedenheit",
+          "description": "Service Cloud ist die Kundenserviceplattform von Salesforce, die Unternehmen hilft, außergewöhnliche Support-Erlebnisse zu bieten. Sie bietet Werkzeuge zur Verwaltung von Kundeninteraktionen über mehrere Kanäle, zur Automatisierung von Arbeitsabläufen und zur effizienten Lösung von Problemen. Mit Funktionen für das Fallmanagement, den Wissensaustausch und KI-gestützten Support ermöglicht die Service Cloud Serviceteams, schnelle, personalisierte und proaktive Kundenbetreuung zu bieten.",
+          "benefits": [
+            "Fallmanagement",
+            "Omni-Channel-Support",
+            "Wissensdatenbank",
+            "KI-gestützte Chatbots",
+            "Automatisierung & Workflows",
+            "Kundenselbstbedienungsportale"
+          ],
+          "footer": "Ermächtigen Sie Ihre Kundenserviceteams mit der Service Cloud und bieten Sie schnelle, nahtlose und personalisierte Unterstützung im großen Maßstab.",
+          "image_alt": "Service Cloud Dienstleistungsbild"
+        },
+        "experience_cloud": {
+          "title": "Experience Cloud: Erstellen Sie ansprechende Kunden-Communities",
+          "description": "Experience Cloud ist die Plattform von Salesforce zur Erstellung von markenspezifischen Kundenerlebnissen durch Portale, Websites und Communities. Sie ermöglicht es Unternehmen, mit Kunden, Partnern und Mitarbeitern in Kontakt zu treten, indem sie personalisierte Inhalte und nahtlose Selbstbedienungsoptionen bereitstellt. Mit anpassbaren Vorlagen und der Integration von Salesforce-Daten können Sie lebendige digitale Erlebnisse schaffen, die Engagement und Loyalität fördern.",
+          "benefits": [
+            "Gemeinschaftsbildung",
+            "Partnerportale",
+            "Kundenselbstbedienung",
+            "Personalisierte Erlebnisse",
+            "Salesforce-Datenintegration",
+            "Anpassbare Vorlagen"
+          ],
+          "footer": "Erstellen Sie ansprechende, vernetzte Communities mit Experience Cloud und bauen Sie stärkere Beziehungen zu Ihren Kunden, Partnern und Mitarbeitern auf.",
+          "image_alt": "Experience Cloud Dienstleistungsbild"
+        },
+        "integrations": {
+          "title": "Salesforce-Integrationen: Verbinden Sie Ihre Systeme für nahtlose Abläufe",
+          "description": "Salesforce-Integrationen verbinden Ihre Systeme, Apps und Datenquellen und schaffen einen einheitlichen, effizienten Arbeitsablauf. Von ERP- und Marketingplattformen bis hin zu Drittanbieter-Apps rationalisieren diese Lösungen Prozesse, verbessern die Datenqualität und erhöhen die Einblicke. Die Integration von Salesforce in Ihren Technologiestack beseitigt Silos, automatisiert Aufgaben und sorgt dafür, dass Teams Zugang zu aktuellen Informationen haben.",
+          "benefits": [
+            "ERP-Integration",
+            "Integration von Drittanbieter-Apps",
+            "Daten-Sync & API-Integration",
+            "Echtzeit-Datenfreigabe"
+          ],
+          "footer": "Optimieren Sie Ihre Abläufe mit Salesforce-Integrationen, um einen nahtlosen Datenfluss und eine verbesserte Unternehmensleistung sicherzustellen.",
+          "image_alt": "Salesforce-Integrationen Dienstleistungsbild"
+        }
+      }
+    },
+    "contact_section": {
+      "heading": {
+        "main": "Kontaktieren Sie Uns",
+        "sub": "Nehmen Sie Jetzt Kontakt Mit Uns Auf"
+      },
+      "form": {
+        "labels": {
+          "name": "Name",
+          "email": "E-Mail",
+          "company": "Unternehmen",
+          "message": "Nachricht"
+        },
+        "button": "Senden",
+        "loading_text": "Wird geladen...",
+        "success_message": "E-Mail erfolgreich gesendet!",
+        "error_message": "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+      },
+      "contact_info": {
+        "email": {
+          "icon_alt": "E-Mail-Icon",
+          "label": "E-Mail",
+          "value": "info@salesnext.tech"
+        },
+        "location": {
+          "icon_alt": "Standort-Icon",
+          "label": "Standort",
+          "value": "Zürich, Schweiz"
+        }
+      },
+      "map": {
+        "alt": "Karte von Zürich, Schweiz",
+        "iframe_src": "https://maps.google.com/maps?q=Zurich,+Switzerland&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "footer": {
+      "text": "Urheberrecht © 2024 Salesnext GmbH. Alle Rechte vorbehalten."
+    }
+  }  

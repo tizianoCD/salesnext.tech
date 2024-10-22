@@ -1,0 +1,165 @@
+{
+    "meta": {
+      "charset": "UTF-8",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "",
+      "author": "",
+      "title": "SalesNext Consulting - Empowering Business Growth & Innovation"
+    },
+    "header": {
+      "logo_alt": "SalesNext Consulting Logo",
+      "menu": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact_us": "Contact Us",
+        "language_selector": {
+          "label": "Select Language",
+          "en": "English",
+          "de": "Deutsch"
+        }
+      }
+    },
+    "preloader": {
+      "loading_text": "Loading...",
+      "dots": {
+        "dot1": "",
+        "dot2": "",
+        "dot3": ""
+      }
+    },
+    "main_banner": {
+      "heading": "Your Salesforce Consulting Experts",
+      "subheading": "Boost Business Performance with Tailored Solutions",
+      "description": "SalesNext Consulting provides expert Salesforce implementations and custom solutions to streamline your operations and drive growth.",
+      "contact_button": "Contact Us",
+      "image_alt": "SalesNext Banner Image"
+    },
+    "about_section": {
+      "heading": {
+        "main": "About Us",
+        "sub": "Who is SalesNext Agency"
+      },
+      "description": "SalesNext is a consulting firm specializing in Salesforce implementation and CRM solutions. We help businesses streamline sales processes, improve customer relationships, and drive growth through customized Salesforce integrations. Our expert team is committed to optimizing operations, boosting productivity, and ensuring long-term success.",
+      "guiding_heading": "We guide you through:",
+      "skills": {
+        "development": "Development",
+        "configuration": "Configuration",
+        "support": "Support"
+      },
+      "image_alt": "SalesNext About Image"
+    },
+    "services_section": {
+      "heading": {
+        "main": "Our Services",
+        "sub": "What Our Agency Provides"
+      },
+      "services": {
+        "sales_cloud": {
+          "title": "Sales Cloud: Elevate Your Sales Performance",
+          "description": "Sales Cloud is Salesforce’s powerful sales automation platform designed to help businesses boost their sales performance. It provides tools to manage leads, track opportunities, and streamline sales processes, all in one place. With robust features for forecasting, collaboration, and analytics, Sales Cloud empowers sales teams to close deals faster and make data-driven decisions.",
+          "benefits": [
+            "Lead Management",
+            "Opportunity Management",
+            "Sales Analytics",
+            "Collaboration Tools",
+            "Customization",
+            "Optimized Template"
+          ],
+          "footer": "Transform your sales approach with Sales Cloud and drive sustainable growth.",
+          "image_alt": "Sales Cloud Service Image"
+        },
+        "marketing_cloud": {
+          "title": "Marketing Cloud: Transform Your Marketing Strategy",
+          "description": "Marketing Cloud is Salesforce’s all-in-one digital marketing platform designed to help businesses connect with customers across every channel. It empowers marketers with tools for personalized customer journeys, real-time engagement, and data-driven insights. Marketing Cloud enables you to build meaningful relationships with your audience through targeted messaging and comprehensive automation.",
+          "benefits": [
+            "Journey Builder",
+            "Email Marketing",
+            "Social Media Integration",
+            "Customer Data Platform (CDP)",
+            "Audience Segmentation",
+            "Automation Studio"
+          ],
+          "footer": "Enhance your marketing strategy with Marketing Cloud and drive impactful, personalized customer engagement.",
+          "image_alt": "Marketing Cloud Service Image"
+        },
+        "service_cloud": {
+          "title": "Service Cloud: Enhance Customer Support and Satisfaction",
+          "description": "Service Cloud is Salesforce’s customer service platform designed to help businesses deliver exceptional support experiences. It provides tools to manage customer interactions across multiple channels, automate workflows, and resolve issues efficiently. With features for case management, knowledge sharing, and AI-powered support, Service Cloud empowers service teams to deliver fast, personalized, and proactive customer care.",
+          "benefits": [
+            "Case Management",
+            "Omni-Channel Support",
+            "Knowledge Base",
+            "AI-Powered Chatbots",
+            "Automation & Workflows",
+            "Customer Self-Service Portals"
+          ],
+          "footer": "Empower your customer service teams with Service Cloud and deliver fast, seamless, and personalized support at scale.",
+          "image_alt": "Service Cloud Service Image"
+        },
+        "experience_cloud": {
+          "title": "Experience Cloud: Build Engaging Customer Communities",
+          "description": "Experience Cloud is Salesforce’s platform for creating branded customer experiences through portals, websites, and communities. It enables businesses to connect with customers, partners, and employees by providing personalized content and seamless self-service options. With customizable templates and integration with Salesforce data, Experience Cloud allows you to create vibrant digital experiences that foster engagement and loyalty.",
+          "benefits": [
+            "Community Building",
+            "Partner Portals",
+            "Customer Self-Service",
+            "Personalized Experiences",
+            "Salesforce Data Integration",
+            "Customizable Templates"
+          ],
+          "footer": "Create engaging, connected communities with Experience Cloud and build stronger relationships with your customers, partners, and employees.",
+          "image_alt": "Experience Cloud Service Image"
+        },
+        "integrations": {
+          "title": "Salesforce Integrations: Connect Your Systems for Seamless Operations",
+          "description": "Salesforce integrations connect your systems, apps, and data sources, creating a unified, efficient workflow. From ERP and marketing platforms to third-party apps, these solutions streamline processes, improve data accuracy, and enhance insights. Integrating Salesforce with your tech stack breaks down silos, automates tasks, and ensures teams have access to up-to-date information.",
+          "benefits": [
+            "ERP Integration",
+            "Third-Party App Integration",
+            "Data Sync & API Integration",
+            "Real-Time Data Sharing"
+          ],
+          "footer": "Optimize your operations with Salesforce integrations, ensuring seamless data flow and enhanced business performance.",
+          "image_alt": "Salesforce Integrations Service Image"
+        }
+      }
+    },
+    "contact_section": {
+      "heading": {
+        "main": "Contact Us",
+        "sub": "Get In Touch With Us Now"
+      },
+      "form": {
+        "labels": {
+          "name": "Name",
+          "email": "Email",
+          "company": "Company",
+          "message": "Message"
+        },
+        "button": "Send",
+        "loading_text": "Loading...",
+        "success_message": "Email sent successfully!",
+        "error_message": "Failed to send email. Please try again later."
+      },
+      "contact_info": {
+        "email": {
+          "icon_alt": "Email Icon",
+          "label": "Email",
+          "value": "info@salesnext.tech"
+        },
+        "location": {
+          "icon_alt": "Location Icon",
+          "label": "Location",
+          "value": "Zürich, Switzerland"
+        }
+      },
+      "map": {
+        "alt": "Map of Zürich, Switzerland",
+        "iframe_src": "https://maps.google.com/maps?q=Zurich,+Switzerland&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "footer": {
+      "text": "Copyright © 2024 Salesnext Gmbh. All Rights Reserved."
+    }
+  }
