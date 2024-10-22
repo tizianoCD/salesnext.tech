@@ -218,6 +218,8 @@ body {
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
   transition: all .5s;
+  height: 40px;
+
 }
 
 .border-first-button a:hover {
@@ -1843,6 +1845,7 @@ contact
 }
 
 .contact-tiles .info-post {
+  height: 100%;
   background-color: #f9f9f9; /* Light background for the tiles */
   padding: 20px;
   border-radius: 10px; /* Rounded corners */
