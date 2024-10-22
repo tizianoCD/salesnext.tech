@@ -441,195 +441,116 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    (function () {
-      emailjs.init('KAfA-1eqc2SFs2m3Q');
-    })();
-  </script>
-  
-  <script>
-    let isSubmitting = false; // Prevent multiple form submissions flag
-  
-    const handleForm = async (e) => {
-      e.preventDefault(); // Prevent default form submission behavior
-  
-      // If already submitting, prevent multiple submissions
-      if (isSubmitting) {
-        return;
-      }
-  
-      isSubmitting = true; // Set the flag to prevent duplicate submissions
-  
-      const form = document.getElementById('contact-form');
-      const submitButton = form.querySelector('button[type="submit"]');
-      const loadingText = document.getElementById('loading-text'); // Placeholder for the loading text
-  
-      if (!submitButton) {
-        console.error('Submit button not found in the form!');
-        isSubmitting = false;
-        return;
-      }
-  
-      submitButton.disabled = true; // Disable the submit button to prevent multiple submissions
-      loadingText.innerText = 'Loading...'; // Show the loading message
-  
+<script>
+  (function () {
+    emailjs.init('KAfA-1eqc2SFs2m3Q');
+  })();
+</script>
+
+<script>
+  let isSubmitting = false; // Prevent multiple form submissions flag
+
+  const handleForm = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // If already submitting, prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
+
+    isSubmitting = true; // Set the flag to prevent duplicate submissions
+
+    const form = document.getElementById('contact-form');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const loadingText = document.getElementById('loading-text'); // Placeholder for the loading text
+
+    if (!submitButton) {
+      console.error('Submit button not found in the form!');
+      isSubmitting = false;
+      return;
+    }
+
+    submitButton.disabled = true; // Disable the submit button to prevent multiple submissions
+    loadingText.innerText = 'Loading...'; // Show the loading message
+
+    try {
+      // Send email using EmailJS
+      await emailjs.sendForm('service_cysqmp7', 'template_cgnfvia', form);
+
+      // Hide the form and show success message
+      form.style.display = 'none'; // Hide the form
+      loadingText.innerText = 'Email sent successfully!'; // Show success message
+    } catch (error) {
+      console.error('Error occurred while sending email:', error); // Log the error in case of failure
+      loadingText.innerText = 'Failed to send email. Please try again later.'; // Show error message
+    } finally {
+      submitButton.disabled = false; // Re-enable the submit button after the process completes
+      isSubmitting = false; // Reset the flag to allow further submissions
+    }
+  };
+
+  // Ensure event listener is attached only once
+  document.addEventListener('DOMContentLoaded', function() {
+    const formElement = document.getElementById('contact-form');
+
+    if (formElement) {
+      formElement.removeEventListener('submit', handleForm); // Remove any existing listener
+      formElement.addEventListener('submit', handleForm); // Attach the handleForm to the submit event
+    } else {
+      console.error('Form element not found!');
+    }
+
+    // Load content from en.json
+    const loadContent = async () => {
+      console.log('Loading content from en.json');
       try {
-        // Send email using EmailJS
-        await emailjs.sendForm('service_cysqmp7', 'template_cgnfvia', form);
-  
-        // Hide the form and show success message
-        form.style.display = 'none'; // Hide the form
-        loadingText.innerText = 'Email sent successfully!'; // Show success message
+        const response = await fetch('assets/js/en.json');
+        if (!response.ok) {
+          console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
+          return;
+        }
+        const data = await response.json();
+
+        // Populate various sections
+        document.getElementById('footer-text').innerText = data.footer.text;
+        document.getElementById('contact-heading').innerText = data.contact.heading;
+        document.getElementById('contact-subheading').innerText = data.contact.subheading;
+        document.getElementById('contact-email').innerText = data.contact.email.text;
+        document.getElementById('contact-email').href = `mailto:${data.contact.email.link}`; // Set mailto link
+        document.getElementById('contact-location').innerText = data.contact.location;
+
+        document.getElementById('main-banner-heading').innerText = data.banner.heading;
+        document.getElementById('main-banner-subheading').innerText = data.banner.subheading;
+        document.getElementById('main-banner-description').innerText = data.banner.description;
+        document.getElementById('contact-button').innerText = data.banner.contactButton;
+
+        document.getElementById('about-heading').innerText = data.about.heading;
+        document.getElementById('about-subheading').innerText = data.about.subheading;
+        document.getElementById('about-description').innerText = data.about.description;
+        document.getElementById('guiding-heading').innerText = data.about.guidingHeading;
+        document.getElementById('skill-development').innerText = data.about.skills.development;
+        document.getElementById('skill-configuration').innerText = data.about.skills.configuration;
+        document.getElementById('skill-support').innerText = data.about.skills.support;
+
+        document.getElementById('services-heading').innerText = data.services.heading;
+        document.getElementById('services-subheading').innerText = data.services.subheading;
+        for (let i = 1; i <= 5; i++) {
+          document.getElementById(`service-${i}-name`).innerText = data.services[`service${i}`].name;
+          document.getElementById(`service-${i}-title`).innerText = data.services[`service${i}`].title;
+          document.getElementById(`service-${i}-description`).innerText = data.services[`service${i}`].description;
+          document.getElementById(`service-${i}-features`).innerHTML = data.services[`service${i}`].features.map(feature => `<div>${feature}</div>`).join('');
+          document.getElementById(`service-${i}-conclusion`).innerText = data.services[`service${i}`].conclusion;
+        }
       } catch (error) {
-        console.error('Error occurred while sending email:', error); // Log the error in case of failure
-        loadingText.innerText = 'Failed to send email. Please try again later.'; // Show error message
-      } finally {
-        submitButton.disabled = false; // Re-enable the submit button after the process completes
-        isSubmitting = false; // Reset the flag to allow further submissions
+        console.error('Error loading content:', error);
       }
     };
-  
-    // Ensure event listener is attached only once
-    document.addEventListener('DOMContentLoaded', function() {
-      const formElement = document.getElementById('contact-form');
-  
-      if (formElement) {
-        formElement.removeEventListener('submit', handleForm); // Remove any existing listener
-        formElement.addEventListener('submit', handleForm); // Attach the handleForm to the submit event
-      } else {
-        console.error('Form element not found!');
-      }
-    });
-  </script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const languageSelector = document.getElementById('language-selector');
-  
-        // Load footer content based on the selected language
-        const loadFooter = async (lang) => {
-            console.log(`Attempting to load footer for language: ${lang}`);
-            try {
-                const response = await fetch(`assets/js/${lang}.json`);
-                if (!response.ok) {
-                    console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
-                    return;
-                }
-                const data = await response.json();
-                document.getElementById('footer-text').innerText = data.footer.text;
-            } catch (error) {
-                console.error('Error loading language file:', error);
-            }
-        };
-  
-        // Load contact content based on the selected language
-        const loadContactContent = async (lang) => {
-            console.log(`Attempting to load contact content for language: ${lang}`);
-            try {
-                const response = await fetch(`assets/js/contact_${lang}.json`);
-                if (!response.ok) {
-                    console.error(`Failed to fetch contact language file: ${response.status} ${response.statusText}`);
-                    return;
-                }
-                const data = await response.json();
-                // Populate contact section
-                document.getElementById('contact-heading').innerText = data.contact.heading;
-                document.getElementById('contact-subheading').innerText = data.contact.subheading;
-                document.getElementById('contact-email').innerText = data.contact.email.text;
-                document.getElementById('contact-email').href = `mailto:${data.contact.email.link}`; // Set mailto link
-                document.getElementById('contact-location').innerText = data.contact.location;
-            } catch (error) {
-                console.error('Error loading contact language file:', error);
-            }
-        };
-  
-        // Load main banner content based on the selected language
-        const loadMainBannerContent = async (lang) => {
-            console.log(`Attempting to load main banner content for language: ${lang}`);
-            try {
-                const response = await fetch(`assets/js/banner_${lang}.json`);
-                if (!response.ok) {
-                    console.error(`Failed to fetch banner language file: ${response.status} ${response.statusText}`);
-                    return;
-                }
-                const data = await response.json();
-                // Populate main banner section
-                document.getElementById('main-banner-heading').innerText = data.banner.heading;
-                document.getElementById('main-banner-subheading').innerText = data.banner.subheading;
-                document.getElementById('main-banner-description').innerText = data.banner.description;
-                document.getElementById('contact-button').innerText = data.banner.contactButton;
-            } catch (error) {
-                console.error('Error loading banner language file:', error);
-            }
-        };
-  
-        // Load about section content based on the selected language
-        const loadAboutContent = async (lang) => {
-            console.log(`Attempting to load about content for language: ${lang}`);
-            try {
-                const response = await fetch(`assets/js/about_${lang}.json`);
-                if (!response.ok) {
-                    console.error(`Failed to fetch about language file: ${response.status} ${response.statusText}`);
-                    return;
-                }
-                const data = await response.json();
-                // Populate about section
-                document.getElementById('about-heading').innerText = data.about.heading;
-                document.getElementById('about-subheading').innerText = data.about.subheading;
-                document.getElementById('about-description').innerText = data.about.description;
-                document.getElementById('guiding-heading').innerText = data.about.guidingHeading;
-                document.getElementById('skill-development').innerText = data.about.skills.development;
-                document.getElementById('skill-configuration').innerText = data.about.skills.configuration;
-                document.getElementById('skill-support').innerText = data.about.skills.support;
-            } catch (error) {
-                console.error('Error loading about language file:', error);
-            }
-        };
-  
-        // Load services content based on the selected language
-        const loadServicesContent = async (lang) => {
-            console.log(`Attempting to load services content for language: ${lang}`);
-            try {
-                const response = await fetch(`assets/js/services_${lang}.json`); // Adjust path to the services JSON files
-                if (!response.ok) {
-                    console.error(`Failed to fetch services language file: ${response.status} ${response.statusText}`);
-                    return;
-                }
-                const data = await response.json();
-                // Populate services section
-                document.getElementById('services-heading').innerText = data.services.heading;
-                document.getElementById('services-subheading').innerText = data.services.subheading;
-                // Populate each service
-                for (let i = 1; i <= 5; i++) {
-                    document.getElementById(`service-${i}-name`).innerText = data.services[`service${i}`].name;
-                    document.getElementById(`service-${i}-title`).innerText = data.services[`service${i}`].title;
-                    document.getElementById(`service-${i}-description`).innerText = data.services[`service${i}`].description;
-                    document.getElementById(`service-${i}-features`).innerHTML = data.services[`service${i}`].features.map(feature => `<div>${feature}</div>`).join('');
-                    document.getElementById(`service-${i}-conclusion`).innerText = data.services[`service${i}`].conclusion;
-                }
-            } catch (error) {
-                console.error('Error loading services language file:', error);
-            }
-        };
-  
-        // Load the default language (English) on initial load
-        loadFooter('en');
-        loadContactContent('en');
-        loadMainBannerContent('en');
-        loadAboutContent('en');
-        loadServicesContent('en'); // Load services content
-  
-        // Change content on language selection
-        languageSelector.addEventListener('change', (event) => {
-            const selectedLanguage = event.target.value;
-            loadFooter(selectedLanguage);
-            loadContactContent(selectedLanguage);
-            loadMainBannerContent(selectedLanguage);
-            loadAboutContent(selectedLanguage);
-            loadServicesContent(selectedLanguage); // Load services content for selected language
-        });
-    });
-  </script>
+
+    // Load the content on initial load
+    loadContent();
+  });
+</script>
+
   
 
 
