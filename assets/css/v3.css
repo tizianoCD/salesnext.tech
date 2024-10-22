@@ -2310,9 +2310,9 @@ textarea {
 
 
   display: inline-block !important;
-  color: #ffffff !important;
-  background-color: #4da6e7;
-  border: 1px solid #0264aa !important;
+  color: black !important;
+  background-color: white;
+  border: 1px solid black !important;
   border-radius: 23px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
