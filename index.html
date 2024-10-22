@@ -702,8 +702,14 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
       .then(data => {
         console.log('Language file data:', data); // Debug log for the JSON data
 
-        // Update the page content with the fetched data
-        document.getElementById('some-text-element').textContent = data.main_banner.heading;
+        // Check if the element exists before trying to update it
+        const headingElement = document.getElementById('some-text-element');
+        if (headingElement) {
+          headingElement.textContent = data.main_banner.heading; // Update the element's text
+        } else {
+          console.error('Element with ID "some-text-element" not found.'); // Debug log for missing element
+        }
+
         // Update other elements based on the fetched JSON
         // Example: document.getElementById('some-other-element').textContent = data.someOtherText;
       })
