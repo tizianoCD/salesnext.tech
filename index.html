@@ -529,11 +529,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const languageSelector = document.getElementById('language-selector');
 
   const loadLanguage = async (lang) => {
+      console.log(`Attempting to load language: ${lang}`); // Log the language being loaded
       try {
-          const response = await fetch(`js/${lang}.json`);
+          const response = await fetch(`js/${lang}.json`); // Load from js/en.json or js/de.json
+          
+          // Check if the response is OK (status in the range 200-299)
+          if (!response.ok) {
+              console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
+              return; // Exit the function if the fetch failed
+          }
+          
           const data = await response.json();
+          console.log(`Loaded data for ${lang}:`, data); // Log the loaded data
 
-          // Update all relevant HTML elements with loaded data
+          // Update HTML elements with the loaded data
           document.getElementById('page-title').textContent = data.meta.title;
           document.getElementById('main-banner-heading').textContent = data.main_banner.heading;
           document.getElementById('main-banner-subheading').textContent = data.main_banner.subheading;
@@ -544,15 +553,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
           document.getElementById('contact-heading').textContent = data.contact_section.heading.main;
           document.getElementById('contact-subheading').textContent = data.contact_section.heading.sub;
-          
+
           // Update navigation links
           document.getElementById('home-link').textContent = data.nav.home; // Assume nav.home exists in your JSON
           document.getElementById('about-link').textContent = data.nav.about; // Assume nav.about exists in your JSON
           document.getElementById('services-link').textContent = data.nav.services; // Assume nav.services exists in your JSON
           document.getElementById('contact-link').textContent = data.nav.contact; // Assume nav.contact exists in your JSON
 
+          console.log(`Successfully updated the content for ${lang}`); // Log successful update
+
       } catch (error) {
-          console.error('Error loading language file:', error);
+          console.error('Error loading language file:', error); // Log any error during fetching or processing
       }
   };
 
@@ -561,10 +572,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Change language on selection
   languageSelector.addEventListener('change', (event) => {
-      const selectedLanguage = event.target.value;
-      loadLanguage(selectedLanguage);
+      const selectedLanguage = event.target.value; // Get the selected language
+      console.log(`Language changed to: ${selectedLanguage}`); // Log the language change
+      loadLanguage(selectedLanguage); // Load the selected language file
   });
 </script>
+
   
   
 
