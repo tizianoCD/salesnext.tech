@@ -685,14 +685,15 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
 
   // Function to fetch and load content from the appropriate language file
   function loadLanguageContent(language) {
-    const jsonFile = language === 'de' ? 'de.json' : 'en.json'; // Choose the file based on the lang parameter
+    // Define the path to the JSON files
+    const filePath = `assets/js/${language === 'de' ? 'de.json' : 'en.json'}`; // Choose the file based on the lang parameter
 
-    console.log('Loading language file:', jsonFile); // Debug log for the file being loaded
+    console.log('Loading language file from path:', filePath); // Debug log for the exact file path being loaded
 
     // Fetch the corresponding language JSON file
-    fetch(jsonFile)
+    fetch(filePath)
       .then(response => {
-        console.log('Fetch response status:', response.status); // Debug log for fetch response
+        console.log('Fetch response status for file:', filePath, 'Status:', response.status); // Debug log for fetch response
         if (!response.ok) {
           throw new Error('Failed to load language file');
         }
@@ -707,7 +708,7 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
         // Example: document.getElementById('some-other-element').textContent = data.someOtherText;
       })
       .catch(error => {
-        console.error('Error loading language file:', error); // Debug log for fetch errors
+        console.error('Error loading language file from path:', filePath, 'Error:', error); // Debug log for fetch errors
       });
   }
 
@@ -728,6 +729,7 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
   // Event listener for language selector change
   document.getElementById('language-selector').addEventListener('change', switchLanguage);
 </script>
+
 
 
 
