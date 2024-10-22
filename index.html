@@ -504,7 +504,7 @@
     const loadContent = async () => {
       console.log('Loading content from en.json');
       try {
-        const response = await fetch('assets/js/en.json');
+        const response = await fetch('assets/js/en.json'); // Ensure the path is correct
         if (!response.ok) {
           console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
           return;
@@ -550,6 +550,7 @@
     loadContent();
   });
 </script>
+
 
   
 
