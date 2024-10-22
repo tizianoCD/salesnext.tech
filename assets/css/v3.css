@@ -221,7 +221,8 @@ body {
 }
 
 .border-first-button a:hover {
-  background-color: white;
+  background-color: #1e6ea8;
+  color: black;
   color: #fff !important;
 }
 
