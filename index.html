@@ -526,54 +526,45 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script>
-  const languageSelector = document.getElementById('language-selector');
+  document.addEventListener("DOMContentLoaded", () => {
+      const languageSelector = document.getElementById('language-selector');
 
-  const loadLanguage = async (lang) => {
-      console.log(`Attempting to load language: ${lang}`); // Log the language being loaded
-      try {
-          const response = await fetch(`assets/js/${lang}.json`); // Correct path to the JSON files
-          console.log(`Fetch response for ${lang}:`, response); // Log the response
+      const loadFooter = async (lang) => {
+          console.log(`Attempting to load footer for language: ${lang}`); // Log the language being loaded
+          try {
+              const response = await fetch(`assets/js/${lang}.json`); // Adjusted path to the JSON files
+              console.log(`Fetch response for ${lang}:`, response); // Log the response
 
-          // Check if the response is OK
-          if (!response.ok) {
-              console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
-              return; // Exit the function if the fetch failed
+              // Check if the response is OK
+              if (!response.ok) {
+                  console.error(`Failed to fetch language file: ${response.status} ${response.statusText}`);
+                  return; // Exit the function if the fetch failed
+              }
+
+              const data = await response.json();
+              console.log(`Loaded data for ${lang}:`, data); // Log the loaded data
+
+              // Update the footer text
+              document.getElementById('footer-text').innerText = data.footer.text; // Update footer text
+              console.log(`Footer text set to: ${data.footer.text}`); // Log the updated footer text
+          } catch (error) {
+              console.error('Error loading language file:', error);
           }
+      };
 
-          const data = await response.json();
-          console.log(`Loaded data for ${lang}:`, data); // Log the loaded data
+      // Load the default language (English) on initial load
+      loadFooter('en'); // You can change 'en' to 'de' to test the German version
+      console.log("Default footer loaded for English"); // Log for default loading
 
-          // Update the main content here
-          document.getElementById('content').innerHTML = `
-              <h1>${data.main_banner.heading}</h1>
-              <p>${data.main_banner.description}</p>
-              <ul>
-                  <li>${data.header.menu.home}</li>
-                  <li>${data.header.menu.about}</li>
-                  <li>${data.header.menu.services}</li>
-                  <li>${data.header.menu.contact_us}</li>
-              </ul>
-          `;
-
-          // Load footer
-          document.getElementById('footer-text').innerText = data.footer.text; // Update footer text
-          console.log(`Footer text updated to: ${data.footer.text}`); // Log the footer update
-
-      } catch (error) {
-          console.error('Error loading language file:', error); // Log any error during fetching or processing
-      }
-  };
-
-  // Load the default language (English) on initial load
-  loadLanguage('en');
-
-  // Change language on selection
-  languageSelector.addEventListener('change', (event) => {
-      const selectedLanguage = event.target.value;
-      console.log(`Language changed to: ${selectedLanguage}`);
-      loadLanguage(selectedLanguage);
+      // Change footer on language selection
+      languageSelector.addEventListener('change', (event) => {
+          const selectedLanguage = event.target.value;
+          console.log(`Language selected: ${selectedLanguage}`); // Log the selected language
+          loadFooter(selectedLanguage);
+      });
   });
 </script>
+
 
 
 </body>
