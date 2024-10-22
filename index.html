@@ -667,30 +667,34 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
 
 
 <script>
-  // Function to switch the language and update the URL parameter
+  // Function to switch the language and reload the page with the appropriate lang parameter
   function switchLanguage() {
     const language = document.getElementById('language-selector').value;
     const currentUrl = new URL(window.location.href);
 
-    // Update the URL to include ?lang=de or ?lang=en without reloading the page
+    // Update the URL to include ?lang=de or ?lang=en
     currentUrl.searchParams.set('lang', language);
-    window.history.pushState({}, '', currentUrl); // This will update the URL with ?lang=<value>
 
-    // Load the language content dynamically
-    loadLanguageContent(language);
+    // Reload the page with the new language in the URL
+    window.location.href = currentUrl.toString();
   }
 
-  // Function to load the content based on the selected language
+  // Function to fetch and load content from the appropriate language file
   function loadLanguageContent(language) {
-    if (language === 'de') {
-      // Load German content
-      document.getElementById('some-text-element').textContent = 'Willkommen bei SalesNext!';
-      // Update other text elements for German if needed...
-    } else {
-      // Load English content (default)
-      document.getElementById('some-text-element').textContent = 'Welcome to SalesNext!';
-      // Update other text elements for English if needed...
-    }
+    const jsonFile = language === 'de' ? 'de.json' : 'en.json'; // Choose the file based on the lang parameter
+
+    // Fetch the corresponding language JSON file
+    fetch(jsonFile)
+      .then(response => response.json())
+      .then(data => {
+        // Update the page content with the fetched data
+        document.getElementById('some-text-element').textContent = data.main_banner.heading;
+        // Update other elements based on the fetched JSON
+        // Example: document.getElementById('some-other-element').textContent = data.someOtherText;
+      })
+      .catch(error => {
+        console.error('Error loading language file:', error);
+      });
   }
 
   // On page load, check the current URL parameter and set the language
@@ -699,7 +703,7 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
     const language = currentUrl.searchParams.get('lang') || 'en'; // Default to 'en' if no param
     document.getElementById('language-selector').value = language;
 
-    // Load the corresponding content
+    // Load the corresponding content from the JSON file
     loadLanguageContent(language);
   });
 
