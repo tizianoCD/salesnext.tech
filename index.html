@@ -64,18 +64,17 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="about">About</a></li>
-              <li class="scroll-to-section"><a href="services">Services</a></li>
-              <li class="scroll-to-section"><div class="border-first-button"><a href="contact">Contact Us</a></div></li> 
-              <!-- Language Selector -->
-            <li>
-              <select class="border-first-button" id="language-selector" onchange="switchLanguage()">
-                <option value="en" selected>English</option>
-                <option value="de">Deutsch</option>
-              </select>
-            </li>  
-            </ul>
+              <li class="scroll-to-section"><a href="#top" class="active" id="home-link">TEST_NOT_LOADED_Home</a></li>
+              <li class="scroll-to-section"><a href="#about" id="about-link">About</a></li>
+              <li class="scroll-to-section"><a href="#services" id="services-link">Services</a></li>
+              <li class="scroll-to-section"><div class="border-first-button"><a href="#contact" id="contact-link">Contact Us</a></div></li>
+              <li>
+                  <select class="border-first-button" id="language-selector">
+                      <option value="en" selected>English</option>
+                      <option value="de">Deutsch</option>
+                  </select>
+              </li>
+          </ul>
             <!-- ***** Menu End ***** -->
           </nav>
         </div>
@@ -526,21 +525,32 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 // language selector
-
 <script>
   const languageSelector = document.getElementById('language-selector');
-  const contentDiv = document.getElementById('content');
 
   const loadLanguage = async (lang) => {
       try {
           const response = await fetch(`js/${lang}.json`);
           const data = await response.json();
-          // Update your HTML content with the loaded data
-          contentDiv.innerHTML = `
-              <h1>${data.main_banner.heading}</h1>
-              <p>${data.main_banner.description}</p>
-              <!-- Add more content as needed -->
-          `;
+
+          // Update all relevant HTML elements with loaded data
+          document.getElementById('page-title').textContent = data.meta.title;
+          document.getElementById('main-banner-heading').textContent = data.main_banner.heading;
+          document.getElementById('main-banner-subheading').textContent = data.main_banner.subheading;
+          document.getElementById('main-banner-description').textContent = data.main_banner.description;
+
+          document.getElementById('about-heading').textContent = data.about_section.heading.main;
+          document.getElementById('about-description').textContent = data.about_section.description;
+
+          document.getElementById('contact-heading').textContent = data.contact_section.heading.main;
+          document.getElementById('contact-subheading').textContent = data.contact_section.heading.sub;
+          
+          // Update navigation links
+          document.getElementById('home-link').textContent = data.nav.home; // Assume nav.home exists in your JSON
+          document.getElementById('about-link').textContent = data.nav.about; // Assume nav.about exists in your JSON
+          document.getElementById('services-link').textContent = data.nav.services; // Assume nav.services exists in your JSON
+          document.getElementById('contact-link').textContent = data.nav.contact; // Assume nav.contact exists in your JSON
+
       } catch (error) {
           console.error('Error loading language file:', error);
       }
@@ -555,7 +565,6 @@ document.addEventListener('DOMContentLoaded', function() {
       loadLanguage(selectedLanguage);
   });
 </script>
-
   
   
 

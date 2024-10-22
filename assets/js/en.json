@@ -4,12 +4,12 @@
       "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
       "description": "",
       "author": "",
-      "title": "TEST_SalesNext Consulting - Empowering Business Growth & Innovation"
+      "title": "SalesNext Consulting - Empowering Business Growth & Innovation"
     },
     "header": {
       "logo_alt": "SalesNext Consulting Logo",
       "menu": {
-        "home": "Home",
+        "home": "TEST_LOADED_Home",
         "about": "About",
         "services": "Services",
         "contact_us": "Contact Us",
