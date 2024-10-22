@@ -239,7 +239,7 @@
                               <h4 id="service-1-title"></h4>
                               <p id="service-1-description"></p>
                               <div class="ticks-list" id="service-1-features"></div>
-                              <p id="service-1-conclusion"></p>
+                              <p id="service-1-footer"></p>
                             </div>
                           </div>
                           <div class="col-lg-4 align-self-center">
@@ -260,7 +260,7 @@
                               <h4 id="service-2-title"></h4>
                               <p id="service-2-description"></p>
                               <div class="ticks-list" id="service-2-features"></div>
-                              <p id="service-2-conclusion"></p>
+                              <p id="service-2-footer"></p>
                             </div>
                           </div>
                           <div class="col-lg-4 align-self-center">
@@ -281,7 +281,7 @@
                               <h4 id="service-3-title"></h4>
                               <p id="service-3-description"></p>
                               <div class="ticks-list" id="service-3-features"></div>
-                              <p id="service-3-conclusion"></p>
+                              <p id="service-3-footer"></p>
                             </div>
                           </div>
                           <div class="col-lg-4 align-self-center">
@@ -302,7 +302,7 @@
                               <h4 id="service-4-title"></h4>
                               <p id="service-4-description"></p>
                               <div class="ticks-list" id="service-4-features"></div>
-                              <p id="service-4-conclusion"></p>
+                              <p id="service-4-footer"></p>
                             </div>
                           </div>
                           <div class="col-lg-4 align-self-center">
@@ -323,7 +323,7 @@
                               <h4 id="service-5-title"></h4>
                               <p id="service-5-description"></p>
                               <div class="ticks-list" id="service-5-features"></div>
-                              <p id="service-5-conclusion"></p>
+                              <p id="service-5-footer"></p>
                             </div>
                           </div>
                           <div class="col-lg-4 align-self-center">
@@ -601,6 +601,8 @@ function loadServicesContent(services) {
         // Service images alt text
         const serviceImg = document.querySelector(`.services-image-0${num} img`);
         if (serviceImg) serviceImg.alt = serviceContent.image_alt;
+        setTextContent(`#service-${num}-footer`, serviceContent.footer);
+
     });
 }
 
