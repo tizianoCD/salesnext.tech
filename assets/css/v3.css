@@ -2342,3 +2342,76 @@ textarea {
   background-color: white;
   color: #007BFF;
 }
+
+
+
+
+
+
+
+
+/* Default styles for larger screens (no side menu) */
+.side-nav {
+  display: none; /* Hide side menu on larger screens */
+}
+
+/* Menu toggle (hamburger icon) styling */
+.menu-toggle {
+  display: none; /* Hide on larger screens by default */
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+/* Media query for mobile and tablet (max-width: 768px) */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block; /* Show the menu toggle button on mobile/tablet */
+  }
+
+  .side-nav {
+    height: 100%; /* Full-height */
+    width: 0; /* Initially hidden (off-screen) */
+    position: fixed; /* Stay in place */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Dark background for the menu */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Smooth slide-in transition */
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  .side-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .side-nav li {
+    padding: 15px;
+    text-align: left;
+  }
+
+  .side-nav li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+  }
+
+  /* When the menu is opened, set its width */
+  .side-nav.open {
+    width: 250px; /* Adjust as necessary */
+  }
+
+  /* Style the select box */
+  #language-selector {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

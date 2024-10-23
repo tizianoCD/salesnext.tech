@@ -56,29 +56,28 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <nav class="main-nav">
-        <!-- ***** Logo Start ***** -->
-        <a href="/" style="width: 300px" class="logo">
-          <img src="assets/images/logo-v3.png" alt="SalesNext Consulting Logo">
-        </a>
-        <!-- ***** Logo End ***** -->
-        <!-- ***** Menu Start ***** -->
-        <ul class="nav">
-          <li class="scroll-to-section"><a href="top" class="active" id="home-link"></a></li>
-          <li class="scroll-to-section"><a href="about" id="about-link"></a></li>
-          <li class="scroll-to-section"><a href="services" id="services-link"></a></li>
-          <li class="scroll-to-section">
-            <div class="border-first-button"><a href="contact" id="contact-link"></a></div>
-          </li>
-          <li>
-            <select class="border-first-button" id="language-selector" onchange="switchLanguage()">
-              <option value="en" selected>English</option>
-              <option value="de">Deutsch</option>
-            </select>
-          </li>
-        </ul>
-        <!-- ***** Menu End ***** -->
-      </nav>
+      <div class="menu-wrapper">
+        <!-- Hamburger menu icon (visible on mobile/tablet) -->
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</button>
+        
+        <!-- Sideloading navigation (for mobile/tablet only) -->
+        <nav id="sidemenu" class="side-nav">
+          <ul class="nav">
+            <li class="scroll-to-section"><a href="top" class="active" id="home-link">Home</a></li>
+            <li class="scroll-to-section"><a href="about" id="about-link">About</a></li>
+            <li class="scroll-to-section"><a href="services" id="services-link">Services</a></li>
+            <li class="scroll-to-section">
+              <div class="border-first-button"><a href="contact" id="contact-link">Contact Us</a></div>
+            </li>
+            <li>
+              <select class="border-first-button" id="language-selector" onchange="switchLanguage()">
+                <option value="en" selected>English</option>
+                <option value="de">Deutsch</option>
+              </select>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </div>

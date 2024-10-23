@@ -177,3 +177,16 @@ function switchLanguage() {
     window.location.href = '/'; // Replace '/' with the URL path for the English version
   }
 }
+
+
+
+
+function toggleMenu() {
+  var menu = document.getElementById('sidemenu');
+  // Toggle the 'open' class to expand/collapse the menu
+  if (menu.classList.contains('open')) {
+    menu.classList.remove('open');
+  } else {
+    menu.classList.add('open');
+  }
+}
