@@ -491,15 +491,14 @@
 
 
 
-  // Load content from en.json
- // Function to load JSON content
- async function loadLanguageContent(language = 'en') {
-    const response = await fetch(`/assets/js/${language}.json`);
+// Function to load JSON content
+async function loadLanguageContent(language = 'en') {
+    try {
+        const response = await fetch(`/assets/js/${language}.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const content = await response.json();
-        
         // Load header content
         loadHeaderContent(content.header);
         
