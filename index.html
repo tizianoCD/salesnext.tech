@@ -503,6 +503,7 @@ async function loadLanguageContent() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const content = await response.json();
+
         // Load header content
         loadHeaderContent(content.header);
         
@@ -529,7 +530,7 @@ async function loadLanguageContent() {
 // Call loadLanguageContent on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     loadLanguageContent(); // Load the appropriate language content
-  }); // Add this closing brace
+});
 
 // Function to get the language from the pathname
 function getLanguageFromPath() {
@@ -537,19 +538,6 @@ function getLanguageFromPath() {
     const langParam = path.split('/')[1]; // Get the first segment after the root
     return langParam; // This would return 'de' or 'en'
 }
-
-// Load language content based on the pathname
-async function loadLanguageContent() {
-    const lang = getLanguageFromPath(); // Get language parameter from URL
-    const validLanguages = ['en', 'de']; // Define valid languages
-    const selectedLanguage = validLanguages.includes(lang) ? lang : 'en'; // Default to 'en' if invalid
-
-    try {
-        const response = await fetch(`/assets/js/${selectedLanguage}.json`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const content = await response.json();
 
 // Load header content
 function loadHeaderContent(header) {
@@ -570,6 +558,7 @@ function loadHeaderContent(header) {
     const contactLink = document.querySelector('#contact-link');
     if (contactLink) contactLink.textContent = header.menu.contact_us;
 }
+
 
 // Load main banner content
 function loadMainBannerContent(banner) {
@@ -675,7 +664,6 @@ function loadFooterContent(footer) {
 function createBenefitsList(benefits) {
     return benefits.map(benefit => `<p><i class="fa fa-check"></i> ${benefit}</p>`).join('');
 }
-
 // Helper function to safely set text content
 function setTextContent(selector, text) {
     const element = document.querySelector(selector);
@@ -685,7 +673,7 @@ function setTextContent(selector, text) {
 }
 
 // Load content when DOM is ready
-document.addEventListener('DOMContentLoaded', () => loadLanguageContent('en'));
+document.addEventListener('DOMContentLoaded', () => loadLanguageContent()); // No argument needed
 
 
 </script>
