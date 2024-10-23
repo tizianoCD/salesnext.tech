@@ -529,6 +529,7 @@ async function loadLanguageContent() {
 // Call loadLanguageContent on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     loadLanguageContent(); // Load the appropriate language content
+  }); // Add this closing brace
 
 // Function to get the language from the pathname
 function getLanguageFromPath() {
@@ -537,12 +538,18 @@ function getLanguageFromPath() {
     return langParam; // This would return 'de' or 'en'
 }
 
-function switchLanguage() {
-    const languageSelector = document.getElementById('language-selector');
-    const selectedLanguage = languageSelector.value;
-    loadLanguageContent(selectedLanguage);
-}
+// Load language content based on the pathname
+async function loadLanguageContent() {
+    const lang = getLanguageFromPath(); // Get language parameter from URL
+    const validLanguages = ['en', 'de']; // Define valid languages
+    const selectedLanguage = validLanguages.includes(lang) ? lang : 'en'; // Default to 'en' if invalid
 
+    try {
+        const response = await fetch(`/assets/js/${selectedLanguage}.json`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const content = await response.json();
 
 // Load header content
 function loadHeaderContent(header) {
