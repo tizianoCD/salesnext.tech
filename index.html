@@ -695,19 +695,18 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
         .then(data => {
           console.log('Language data loaded:', data);
           
-          // Update the page content dynamically
-          const headingElement = document.getElementById('main-heading');
-          const descriptionElement = document.getElementById('main-description');
+          // Example: Updating multiple sections with the loaded data
+          document.getElementById('main-heading').textContent = data.main_banner.heading;
+          document.getElementById('main-description').textContent = data.main_banner.description;
+          document.getElementById('contact-button').textContent = data.main_banner.contact_button;
+          document.getElementById('about-heading').textContent = data.about_section.heading.main;
+          document.getElementById('about-description').textContent = data.about_section.description;
+          document.getElementById('guiding-heading').textContent = data.about_section.guiding_heading;
+          document.getElementById('development-skill').textContent = data.about_section.skills.development;
+          document.getElementById('configuration-skill').textContent = data.about_section.skills.configuration;
+          document.getElementById('support-skill').textContent = data.about_section.skills.support;
 
-          // Check if elements exist before updating content
-          if (headingElement && descriptionElement) {
-            headingElement.textContent = data.main_banner.heading;
-            descriptionElement.textContent = data.main_banner.description;
-            console.log('Updated content with language:', language);
-          } else {
-            console.error('Required elements not found in the DOM.');
-          }
-
+          console.log('Page content updated with the selected language.');
         })
         .catch(error => {
           console.error('Error loading language file:', error);
