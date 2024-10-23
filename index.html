@@ -489,11 +489,13 @@
     }
   };
 
+
+
   // Load content from en.json
  // Function to load JSON content
 async function loadLanguageContent() {
     try {
-        const response = await fetch('/assets/js/en.json');
+        const response = await fetch('/assets/js/de.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
