@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Default language set to English -->
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>SalesNext Consulting - Empowering Business Growth & Innovation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/v3.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7SDQZBCCS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7SDQZBCCS6');
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <nav class="main-nav">
+        <!-- ***** Logo Start ***** -->
+        <a href="/" style="width: 300px" class="logo">
+          <img src="assets/images/logo-v3.png" alt="SalesNext Consulting Logo">
+        </a>
+        <!-- ***** Logo End ***** -->
+        <!-- ***** Menu Start ***** -->
+        <ul class="nav">
+          <li class="scroll-to-section"><a href="top" class="active" id="home-link"></a></li>
+          <li class="scroll-to-section"><a href="about" id="about-link"></a></li>
+          <li class="scroll-to-section"><a href="services" id="services-link"></a></li>
+          <li class="scroll-to-section">
+            <div class="border-first-button"><a href="contact" id="contact-link"></a></div>
+          </li>
+          <li>
+            <select class="border-first-button" id="language-selector" onchange="switchLanguage()">
+              <option value="en" selected>English</option>
+              <option value="de">Deutsch</option>
+            </select>
+          </li>
+        </ul>
+        <!-- ***** Menu End ***** -->
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h6 id="main-banner-heading"></h6>
+                  <h2 id="main-banner-subheading"></h2>
+                  <p id="main-banner-description"></p>
+                </div>
+                <div class="col-lg-12">
+                  <div class="scroll-to-section">
+                    <a href="contact" id="contact-button"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="assets/images/slider-dec-v3.png" alt="SalesNext Banner Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="about section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-left-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="assets/images/about-dec-v3.png" alt="SalesNext About Image">
+            </div>
+          </div>
+          <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="about-right-content">
+              <div class="section-heading">
+                <h6 id="about-heading"></h6>
+                <h4 id="about-subheading"></h4>
+                <div class="line-dec"></div>
+              </div>
+              <p id="about-description"></p>
+              <div class="section-heading">
+                <h6 id="guiding-heading"></h6>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                  <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="progress-value text-center">
+                      <div>
+                        <span id="skill-development"></span>
+                      </div>
+                      <div class="progress-line"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4">
+                  <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="progress-value text-center">
+                      <div>
+                        <span id="skill-configuration"></span>
+                      </div>
+                      <div class="progress-line"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4">
+                  <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="progress-value text-center">
+                      <div>
+                        <span id="skill-support"></span>
+                      </div>
+                      <div class="progress-line"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="services" class="services section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+          <h6 id="services-heading"></h6>
+          <h4 id="services-subheading"></h4>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="naccs">
+          <div class="grid">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="menu">
+                  <div class="first-thumb active">
+                    <div class="thumb">
+                      <span class="icon"><img src="assets/images/service-icon-01.png" alt=""></span>
+                      <span id="service-1-name"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="thumb">
+                      <span class="icon"><img src="assets/images/service-icon-02.png" alt=""></span>
+                      <span id="service-2-name"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="thumb">
+                      <span class="icon"><img src="assets/images/service-icon-03.png" alt=""></span>
+                      <span id="service-3-name"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="thumb">
+                      <span class="icon"><img src="assets/images/service-icon-04.png" alt=""></span>
+                      <span id="service-4-name"></span>
+                    </div>
+                  </div>
+                  <div class="last-thumb">
+                    <div class="thumb">
+                      <span class="icon"><img src="assets/images/service-icon-05.png" alt=""></span>
+                      <span id="service-5-name"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <ul class="nacc nacc-overflow">
+                  <li class="active">
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-8 align-self-center">
+                            <div class="left-text">
+                              <h4 id="service-1-title"></h4>
+                              <p id="service-1-description"></p>
+                              <div class="ticks-list" id="service-1-features"></div>
+                              <p id="service-1-footer"></p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 align-self-center">
+                            <div class="right-image">
+                              <img src="assets/images/services-image-01.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-8 align-self-center">
+                            <div class="left-text">
+                              <h4 id="service-2-title"></h4>
+                              <p id="service-2-description"></p>
+                              <div class="ticks-list" id="service-2-features"></div>
+                              <p id="service-2-footer"></p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 align-self-center">
+                            <div class="right-image">
+                              <img src="assets/images/services-image-02.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-8 align-self-center">
+                            <div class="left-text">
+                              <h4 id="service-3-title"></h4>
+                              <p id="service-3-description"></p>
+                              <div class="ticks-list" id="service-3-features"></div>
+                              <p id="service-3-footer"></p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 align-self-center">
+                            <div class="right-image">
+                              <img src="assets/images/services-image-03.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-8 align-self-center">
+                            <div class="left-text">
+                              <h4 id="service-4-title"></h4>
+                              <p id="service-4-description"></p>
+                              <div class="ticks-list" id="service-4-features"></div>
+                              <p id="service-4-footer"></p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 align-self-center">
+                            <div class="right-image">
+                              <img src="assets/images/services-image-04.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-8 align-self-center">
+                            <div class="left-text">
+                              <h4 id="service-5-title"></h4>
+                              <p id="service-5-description"></p>
+                              <div class="ticks-list" id="service-5-features"></div>
+                              <p id="service-5-footer"></p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 align-self-center">
+                            <div class="right-image">
+                              <img src="assets/images/services-image-05.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="contact" class="contact-us section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="section-heading wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+          <h6 id="contact-heading"></h6>
+          <h4 id="contact-subheading"></h4>
+        </div>
+      </div>
+      <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="contact-dec">
+              <img src="assets/images/contact-dec-v3.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="fill-form">
+              <div class="row">
+                <div class="col-lg-100">
+                  <form id="contact-form" onsubmit="handleForm(event)">
+                    <label for="from_name">Name</label>
+                    <input type="text" id="from_name" name="from_name" required />
+                    
+                    <label for="from_email">Email</label>
+                    <input type="email" id="from_email" name="from_email" required />
+                    
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" required />
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit" id="submit-button">Send</button>
+                  </form>
+                  
+                  <!-- Placeholder for the loading or success message -->
+                  <p id="loading-text"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="row justify-content-center contact-tiles">
+              <div class="col-lg-4">
+                <div class="info-post text-center">
+                  <div class="icon">
+                    <img src="assets/images/email-icon.png" alt="">
+                    <a href="mailto:info@salesnext.tech" id="contact-email"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="info-post text-center">
+                  <div class="icon">
+                    <img src="assets/images/location-icon.png" alt=""><br/>
+                    <span id="contact-location"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="map">
+              <iframe src="https://maps.google.com/maps?q=Zurich,+Switzerland&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="230px" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p id="footer-text"></p> <!-- Give it an ID for easy access -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init('KAfA-1eqc2SFs2m3Q');
+  })();
+</script>
+
+<script>
+  let isSubmitting = false; // Prevent multiple form submissions flag
+
+  const handleForm = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // If already submitting, prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
+
+    isSubmitting = true; // Set the flag to prevent duplicate submissions
+
+    const form = document.getElementById('contact-form');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const loadingText = document.getElementById('loading-text'); // Placeholder for the loading text
+
+    if (!submitButton) {
+      console.error('Submit button not found in the form!');
+      isSubmitting = false;
+      return;
+    }
+
+    submitButton.disabled = true; // Disable the submit button to prevent multiple submissions
+    loadingText.innerText = 'Loading...'; // Show the loading message
+
+    try {
+      // Send email using EmailJS
+      await emailjs.sendForm('service_cysqmp7', 'template_cgnfvia', form);
+
+      // Hide the form and show success message
+      form.style.display = 'none'; // Hide the form
+      loadingText.innerText = 'Email sent successfully!'; // Show success message
+    } catch (error) {
+      console.error('Error occurred while sending email:', error); // Log the error in case of failure
+      loadingText.innerText = 'Failed to send email. Please try again later.'; // Show error message
+    } finally {
+      submitButton.disabled = false; // Re-enable the submit button after the process completes
+      isSubmitting = false; // Reset the flag to allow further submissions
+    }
+  };
+
+
+
+// Load language content based on the pathname
+async function loadLanguageContent() {
+    const lang = getLanguageFromPath(); // Get language parameter from URL
+    const validLanguages = ['en', 'de']; // Define valid languages
+    const selectedLanguage = validLanguages.includes(lang) ? lang : 'en'; // Default to 'en' if invalid
+
+    try {
+        const response = await fetch(`/assets/js/${selectedLanguage}.json`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const content = await response.json();
+
+        // Load header content
+        loadHeaderContent(content.header);
+        
+        // Load main banner content
+        loadMainBannerContent(content.main_banner);
+        
+        // Load about section
+        loadAboutContent(content.about_section);
+        
+        // Load services section
+        loadServicesContent(content.services_section);
+        
+        // Load contact section
+        loadContactContent(content.contact_section);
+        
+        // Load footer content
+        loadFooterContent(content.footer);
+
+    } catch (error) {
+        console.error('Error loading language content:', error);
+    }
+}
+
+// Call loadLanguageContent on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    loadLanguageContent(); // Load the appropriate language content
+});
+
+// Function to get the language from the pathname
+function getLanguageFromPath() {
+    const path = window.location.pathname; // Get the current pathname
+    const langParam = path.split('/')[1]; // Get the first segment after the root
+    return langParam; // This would return 'de' or 'en'
+}
+
+// Load header content
+function loadHeaderContent(header) {
+    // Logo alt text
+    const logo = document.querySelector('.logo img');
+    if (logo) logo.alt = header.logo_alt;
+    
+    // Menu items
+    const homeLink = document.querySelector('#home-link');
+    if (homeLink) homeLink.textContent = header.menu.home;
+    
+    const aboutLink = document.querySelector('#about-link');
+    if (aboutLink) aboutLink.textContent = header.menu.about;
+    
+    const servicesLink = document.querySelector('#services-link');
+    if (servicesLink) servicesLink.textContent = header.menu.services;
+    
+    const contactLink = document.querySelector('#contact-link');
+    if (contactLink) contactLink.textContent = header.menu.contact_us;
+}
+
+
+// Load main banner content
+function loadMainBannerContent(banner) {
+    setTextContent('#main-banner-heading', banner.heading);
+    setTextContent('#main-banner-subheading', banner.subheading);
+    setTextContent('#main-banner-description', banner.description);
+    setTextContent('#contact-button', banner.contact_button);
+    
+    // Banner image alt text
+    const bannerImg = document.querySelector('.right-image img');
+    if (bannerImg) bannerImg.alt = banner.image_alt;
+}
+
+// Load about section content
+function loadAboutContent(about) {
+    setTextContent('#about-heading', about.heading.main);
+    setTextContent('#about-subheading', about.heading.sub);
+    setTextContent('#about-description', about.description);
+    setTextContent('#guiding-heading', about.guiding_heading);
+    
+    // Skills
+    setTextContent('#skill-development', about.skills.development);
+    setTextContent('#skill-configuration', about.skills.configuration);
+    setTextContent('#skill-support', about.skills.support);
+    
+    // About image alt text
+    const aboutImg = document.querySelector('.about-left-image img');
+    if (aboutImg) aboutImg.alt = about.image_alt;
+}
+
+// Load services section content
+function loadServicesContent(services) {
+    setTextContent('#services-heading', services.heading.main);
+    setTextContent('#services-subheading', services.heading.sub);
+    
+    // Service names in tabs
+    const servicesList = [
+        'sales_cloud',
+        'marketing_cloud',
+        'service_cloud',
+        'experience_cloud',
+        'integrations'
+    ];
+    
+    servicesList.forEach((service, index) => {
+        const num = index + 1;
+        const serviceContent = services.services[service];
+        
+        setTextContent(`#service-${num}-name`, serviceContent.title.split(':')[0]);
+        setTextContent(`#service-${num}-title`, serviceContent.title);
+        setTextContent(`#service-${num}-description`, serviceContent.description);
+        
+        const featuresElement = document.querySelector(`#service-${num}-features`);
+        if (featuresElement) {
+            featuresElement.innerHTML = createBenefitsList(serviceContent.benefits);
+        }
+        
+        // Service images alt text
+        const serviceImg = document.querySelector(`.services-image-0${num} img`);
+        if (serviceImg) serviceImg.alt = serviceContent.image_alt;
+        setTextContent(`#service-${num}-footer`, serviceContent.footer);
+
+    });
+}
+
+// Load contact section content
+function loadContactContent(contact) {
+    setTextContent('#contact-heading', contact.heading.main);
+    setTextContent('#contact-subheading', contact.heading.sub);
+    
+    // Form labels
+    const formLabels = document.querySelectorAll('.fill-form label');
+    if (formLabels.length > 0) {
+        formLabels[0].textContent = contact.form.labels.name;
+        formLabels[1].textContent = contact.form.labels.email;
+        formLabels[2].textContent = contact.form.labels.company;
+        formLabels[3].textContent = contact.form.labels.message;
+    }
+    
+    // Submit button
+    const submitBtn = document.querySelector('.fill-form button');
+    if (submitBtn) submitBtn.textContent = contact.form.button;
+    
+    // Contact info
+    const emailLink = document.querySelector('#contact-email');
+    if (emailLink) {
+        emailLink.textContent = contact.contact_info.email.value;
+        emailLink.href = `mailto:${contact.contact_info.email.value}`;
+    }
+    
+    setTextContent('#contact-location', contact.contact_info.location.value);
+}
+
+// Load footer content
+function loadFooterContent(footer) {
+    const footerElement = document.querySelector('footer');
+    if (footerElement) {
+        footerElement.textContent = footer.text;
+    }
+}
+
+// Helper function to create benefits list HTML
+function createBenefitsList(benefits) {
+    return benefits.map(benefit => `<p><i class="fa fa-check"></i> ${benefit}</p>`).join('');
+}
+// Helper function to safely set text content
+function setTextContent(selector, text) {
+    const element = document.querySelector(selector);
+    if (element && text) {
+        element.textContent = text;
+    }
+}
+
+// Load content when DOM is ready
+document.addEventListener('DOMContentLoaded', () => loadLanguageContent()); // No argument needed
+
+
+</script>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+</body>
+</html>
