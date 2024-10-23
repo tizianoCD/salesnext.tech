@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Default language set to English -->
 
   <head>
 
@@ -666,73 +666,60 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
 
 
 <script>
-  // Function to switch the language and reload the page with the appropriate lang parameter
-  function switchLanguage() {
-    const language = document.getElementById('language-selector').value;
-    const currentUrl = new URL(window.location.href);
-
-    console.log('Language selected:', language); // Debug log for language selected
-
-    // Update the URL to include ?lang=de or ?lang=en
-    currentUrl.searchParams.set('lang', language);
-    
-    console.log('Updated URL:', currentUrl.toString()); // Debug log for updated URL
-
-    // Reload the page with the new language in the URL
-    window.location.href = currentUrl.toString();
-  }
-
-  // Function to fetch and load content from the appropriate language file
-  function loadLanguageContent(language) {
-    // Define the path to the JSON files
-    const filePath = `assets/js/${language === 'de' ? 'de.json' : 'en.json'}`; // Choose the file based on the lang parameter
-
-    console.log('Loading language file from path:', filePath); // Debug log for the exact file path being loaded
-
-    // Fetch the corresponding language JSON file
-    fetch(filePath)
-      .then(response => {
-        console.log('Fetch response status for file:', filePath, 'Status:', response.status); // Debug log for fetch response
-        if (!response.ok) {
-          throw new Error('Failed to load language file');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Language file data:', data); // Debug log for the JSON data
-
-        // Check if the element exists before trying to update it
-        const headingElement = document.getElementById('some-text-element');
-        if (headingElement) {
-          headingElement.textContent = data.main_banner.heading; // Update the element's text
-        } else {
-          console.error('Element with ID "some-text-element" not found.'); // Debug log for missing element
-        }
-
-        // Update other elements based on the fetched JSON
-        // Example: document.getElementById('some-other-element').textContent = data.someOtherText;
-      })
-      .catch(error => {
-        console.error('Error loading language file from path:', filePath, 'Error:', error); // Debug log for fetch errors
-      });
-  }
-
-  // On page load, check the current URL parameter and set the language
   document.addEventListener('DOMContentLoaded', function() {
-    const currentUrl = new URL(window.location.href);
-    const language = currentUrl.searchParams.get('lang') || 'en'; // Default to 'en' if no param
+    // Set the initial language from the HTML lang attribute
+    const languageSelector = document.getElementById('language-selector');
+    const currentLanguage = document.documentElement.lang || 'en'; // Default to 'en' if not set
 
-    console.log('Current language from URL:', language); // Debug log for language in URL
+    console.log('Initial language from <html> lang:', currentLanguage);
+    
+    // Set the selector value based on the current language
+    languageSelector.value = currentLanguage;
 
-    // Set the selector to the current language
-    document.getElementById('language-selector').value = language;
+    // Function to load language content based on selection
+    function loadLanguageContent(language) {
+      const jsonFile = language === 'de' ? 'assets/js/de.json' : 'assets/js/en.json'; // Language JSON paths
+      
+      console.log('Loading language file from path:', jsonFile);
 
-    // Load the corresponding content from the JSON file
-    loadLanguageContent(language);
+      fetch(jsonFile)
+        .then(response => {
+          console.log('Fetch response status:', response.status); // Log response status
+          if (!response.ok) {
+            throw new Error('Failed to load language file');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Language data loaded:', data);
+          
+          // Update the page content dynamically
+          document.getElementById('main-heading').textContent = data.main_banner.heading;
+          document.getElementById('main-description').textContent = data.main_banner.description;
+
+          // You can also update other elements as needed
+        })
+        .catch(error => {
+          console.error('Error loading language file:', error);
+        });
+    }
+
+    // Event listener for language selector change
+    languageSelector.addEventListener('change', function() {
+      const selectedLanguage = this.value;
+      console.log('Language selected:', selectedLanguage);
+
+      // Set the HTML lang attribute to the selected language
+      document.documentElement.lang = selectedLanguage;
+      console.log('Updated <html> lang:', document.documentElement.lang);
+
+      // Load and apply the corresponding language content
+      loadLanguageContent(selectedLanguage);
+    });
+
+    // On initial load, load the content based on the default or current language
+    loadLanguageContent(currentLanguage);
   });
-
-  // Event listener for language selector change
-  document.getElementById('language-selector').addEventListener('change', switchLanguage);
 </script>
 
 
