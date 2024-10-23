@@ -665,6 +665,8 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
 
 
 
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Set the initial language from the HTML lang attribute
@@ -686,7 +688,7 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
         .then(response => {
           console.log('Fetch response status:', response.status); // Log response status
           if (!response.ok) {
-            throw new Error('Failed to load language file');
+            throw new Error('Failed to load language file: ' + jsonFile);
           }
           return response.json();
         })
@@ -694,10 +696,18 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
           console.log('Language data loaded:', data);
           
           // Update the page content dynamically
-          document.getElementById('main-heading').textContent = data.main_banner.heading;
-          document.getElementById('main-description').textContent = data.main_banner.description;
+          const headingElement = document.getElementById('main-heading');
+          const descriptionElement = document.getElementById('main-description');
 
-          // You can also update other elements as needed
+          // Check if elements exist before updating content
+          if (headingElement && descriptionElement) {
+            headingElement.textContent = data.main_banner.heading;
+            descriptionElement.textContent = data.main_banner.description;
+            console.log('Updated content with language:', language);
+          } else {
+            console.error('Required elements not found in the DOM.');
+          }
+
         })
         .catch(error => {
           console.error('Error loading language file:', error);
@@ -721,7 +731,6 @@ document.addEventListener('DOMContentLoaded', loadLanguageContent);
     loadLanguageContent(currentLanguage);
   });
 </script>
-
 
 
   
