@@ -671,7 +671,7 @@ header
     transition: all 0s ease 0s;
     margin-left: 0px;
     width: 100%;
-    display: flex; /
+    display: flex;
     justify-content: space-around;
     margin-left: 0px;
     flex-wrap: nowrap;
