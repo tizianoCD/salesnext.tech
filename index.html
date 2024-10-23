@@ -493,9 +493,8 @@
 
   // Load content from en.json
  // Function to load JSON content
-async function loadLanguageContent() {
-    try {
-        const response = await fetch('/assets/js/de.json');
+ async function loadLanguageContent(language = 'en') {
+    const response = await fetch(`/assets/js/${language}.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -523,6 +522,13 @@ async function loadLanguageContent() {
         console.error('Error loading language content:', error);
     }
 }
+
+function switchLanguage() {
+    const languageSelector = document.getElementById('language-selector');
+    const selectedLanguage = languageSelector.value;
+    loadLanguageContent(selectedLanguage);
+}
+
 
 // Load header content
 function loadHeaderContent(header) {
@@ -658,7 +664,7 @@ function setTextContent(selector, text) {
 }
 
 // Load content when DOM is ready
-document.addEventListener('DOMContentLoaded', loadLanguageContent);
+document.addEventListener('DOMContentLoaded', () => loadLanguageContent('en'));
 
 
 </script>
