@@ -63,46 +63,20 @@
         </a>
         <!-- ***** Logo End ***** -->
         <!-- ***** Menu Start ***** -->
-        <!-- Hamburger Menu Button -->
-
-        <!-- Navigation with Logo and Hamburger Icon -->
-<!-- Hamburger Menu -->
-<ul id="hamburger-menu" class="nav">
-  <li>
-    <a href="top" id="home-link">Home</a>
-  </li>
-
-  <li>
-    <a href="about" id="about-link">About</a>
-  </li>
-
-  <li>
-    <a href="services" id="services-link">Services</a>
-  </li>
-
-  <li>
-    <div class="border-first-button">
-      <a href="contact" id="contact-link">Contact Us</a>
-    </div>
-  </li>
-
-  <!-- Language selector for mobile -->
-  <li class="mobile-language-selector">
-    <select id="language-selector-mobile" onchange="switchLanguage()">
-      <option value="en" selected>English</option>
-      <option value="de">Deutsch</option>
-    </select>
-  </li>
-
-  <!-- Language selector for desktop -->
-  <li class="desktop-language-selector">
-    <select id="language-selector-desktop" onchange="switchLanguage()">
-      <option value="en" selected>English</option>
-      <option value="de">Deutsch</option>
-    </select>
-  </li>
-</ul>
-
+        <ul class="nav">
+          <li class="scroll-to-section"><a href="top" class="active" id="home-link"></a></li>
+          <li class="scroll-to-section"><a href="about" id="about-link"></a></li>
+          <li class="scroll-to-section"><a href="services" id="services-link"></a></li>
+          <li class="scroll-to-section">
+            <div class="border-first-button"><a href="contact" id="contact-link"></a></div>
+          </li>
+          <li>
+            <select class="border-first-button" id="language-selector" onchange="switchLanguage()">
+              <option value="en" selected>English</option>
+              <option value="de">Deutsch</option>
+            </select>
+          </li>
+        </ul>
         <!-- ***** Menu End ***** -->
       </nav>
     </div>
@@ -698,17 +672,7 @@ document.addEventListener('DOMContentLoaded', () => loadLanguageContent('en'));
 
 
 
-<!-- Inline JavaScript to toggle the menu -->
-<script>
-  function toggleMenu() {
-    var menu = document.getElementById('hamburger-menu');
-    if (menu.style.display === 'none' || menu.style.display === '') {
-      menu.style.display = 'block';
-    } else {
-      menu.style.display = 'none';
-    }
-  }
-</script>
+
 
 
   
