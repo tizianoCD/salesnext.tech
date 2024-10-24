@@ -66,44 +66,42 @@
         <!-- Hamburger Menu Button -->
 
         <!-- Navigation with Logo and Hamburger Icon -->
-<nav class="main-nav">
-  <!-- Logo -->
-  <a href="/" class="logo">
-    <img src="assets/images/logo-v3.png" alt="SalesNext Consulting Logo">
-  </a>
+<!-- Hamburger Menu -->
+<ul id="hamburger-menu" class="nav">
+  <li>
+    <a href="top" id="home-link">Home</a>
+  </li>
 
-  <!-- Hamburger Icon (only visible on mobile) -->
-  <div id="hamburger-icon" onclick="toggleMenu()" style="display: none;">
-    &#9776; <!-- This is the icon (three horizontal lines) -->
-  </div>
+  <li>
+    <a href="about" id="about-link">About</a>
+  </li>
 
-  <!-- Navigation Menu (Hamburger) -->
-  <ul id="hamburger-menu" class="nav">
-    <li><a href="top" id="home-link">Home</a></li>
-    <li><a href="about" id="about-link">About</a></li>
-    <li><a href="services" id="services-link">Services</a></li>
-    <li>
-      <div class="border-first-button">
-        <a href="contact" id="contact-link">Contact Us</a>
-      </div>
-    </li>
-    <!-- Mobile Language Selector -->
-    <li class="mobile-language-selector">
-      <select id="language-selector-mobile" onchange="switchLanguage()">
-        <option value="en" selected>English</option>
-        <option value="de">Deutsch</option>
-      </select>
-    </li>
-  </ul>
+  <li>
+    <a href="services" id="services-link">Services</a>
+  </li>
 
-  <!-- Desktop Language Selector (Always Visible on Desktop) -->
-  <div class="desktop-language-selector">
+  <li>
+    <div class="border-first-button">
+      <a href="contact" id="contact-link">Contact Us</a>
+    </div>
+  </li>
+
+  <!-- Language selector for mobile -->
+  <li class="mobile-language-selector">
+    <select id="language-selector-mobile" onchange="switchLanguage()">
+      <option value="en" selected>English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </li>
+
+  <!-- Language selector for desktop -->
+  <li class="desktop-language-selector">
     <select id="language-selector-desktop" onchange="switchLanguage()">
       <option value="en" selected>English</option>
       <option value="de">Deutsch</option>
     </select>
-  </div>
-</nav>
+  </li>
+</ul>
 
         <!-- ***** Menu End ***** -->
       </nav>
