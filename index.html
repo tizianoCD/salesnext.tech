@@ -63,20 +63,38 @@
         </a>
         <!-- ***** Logo End ***** -->
         <!-- ***** Menu Start ***** -->
-        <ul class="nav">
-          <li class="scroll-to-section"><a href="top" class="active" id="home-link"></a></li>
-          <li class="scroll-to-section"><a href="about" id="about-link"></a></li>
-          <li class="scroll-to-section"><a href="services" id="services-link"></a></li>
-          <li class="scroll-to-section">
-            <div class="border-first-button"><a href="contact" id="contact-link"></a></div>
-          </li>
-          <li>
-            <select class="border-first-button" id="language-selector" onchange="switchLanguage()">
-              <option value="en" selected>English</option>
-              <option value="de">Deutsch</option>
-            </select>
-          </li>
-        </ul>
+        <!-- Hamburger Menu Button -->
+<button onclick="toggleMenu()" style="font-size: 30px; background: none; border: none; cursor: pointer; position: fixed; top: 10px; left: 10px; z-index: 1000;">&#9776;</button>
+
+<!-- Navigation Menu -->
+<ul id="hamburger-menu" class="nav" style="list-style: none; padding: 0; margin: 0; display: none; position: fixed; top: 0; left: 0; background-color: #333; height: 100%; width: 250px; z-index: 999; overflow-y: auto; padding-top: 60px;">
+  
+  <li style="padding: 15px;">
+    <a href="top" id="home-link" style="text-decoration: none; color: white; display: block;">Home</a>
+  </li>
+
+  <li style="padding: 15px;">
+    <a href="about" id="about-link" style="text-decoration: none; color: white; display: block;">About</a>
+  </li>
+
+  <li style="padding: 15px;">
+    <a href="services" id="services-link" style="text-decoration: none; color: white; display: block;">Services</a>
+  </li>
+
+  <li style="padding: 15px;">
+    <div class="border-first-button">
+      <a href="contact" id="contact-link" style="text-decoration: none; color: white; display: block;">Contact Us</a>
+    </div>
+  </li>
+
+  <li style="padding: 15px;">
+    <select id="language-selector" onchange="switchLanguage()" style="width: 100%; padding: 5px;">
+      <option value="en" selected>English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </li>
+
+</ul>
         <!-- ***** Menu End ***** -->
       </nav>
     </div>
@@ -672,7 +690,17 @@ document.addEventListener('DOMContentLoaded', () => loadLanguageContent('en'));
 
 
 
-
+<!-- Inline JavaScript to toggle the menu -->
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById('hamburger-menu');
+    if (menu.style.display === 'none' || menu.style.display === '') {
+      menu.style.display = 'block';
+    } else {
+      menu.style.display = 'none';
+    }
+  }
+</script>
 
 
   
