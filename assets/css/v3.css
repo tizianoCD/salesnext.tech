@@ -733,7 +733,6 @@ header
   .header-area .main-nav .nav li a {
     height: 50px !important;
     line-height: 50px !important;
-    padding: 0px !important;
     border: none !important;
     background: #f7f7f7 !important;
     color: #191a20 !important;
@@ -2359,7 +2358,7 @@ textarea {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0px 15px;
   text-decoration: none;
   font-size: 17px;
 }
