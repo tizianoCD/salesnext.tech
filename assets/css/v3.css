@@ -2340,66 +2340,86 @@ textarea {
 
 /* testtttt */
 
-/* General styles for the menu */
-#hamburger-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none; /* Hidden initially */
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #f5f5f5;
-  width: 100%;
-  height: auto;
-  z-index: 999;
-  padding-top: 60px;
+/* General styles for the logo */
+.logo img {
+  width: 150px; /* Adjust logo size as needed */
 }
 
-/* Styling for the individual items */
-#hamburger-menu li {
-  padding: 15px;
-}
-
-#hamburger-menu a {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-/* Styling for the mobile language selector */
-.mobile-language-selector {
+/* Hide hamburger menu and icon by default */
+#hamburger-menu, #hamburger-icon {
   display: none;
 }
 
-#language-selector-mobile {
-  padding: 5px;
-  width: auto; /* Adjust width */
-  color: black;
-}
-
-/* Styling for the desktop language selector */
+/* Desktop styles */
 .desktop-language-selector {
   display: block;
 }
 
-#language-selector-desktop {
-  padding: 5px;
-  width: 100%; /* Desktop selector uses full width */
-  color: black;
-}
-
 /* Responsive styles for mobile */
 @media (max-width: 767px) {
-  .mobile-language-selector {
-    display: block; /* Show on mobile */
+  /* Show hamburger icon on mobile */
+  #hamburger-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 
-  #language-selector-mobile {
-    width: auto; /* Adjusted for smaller screens */
+  /* Show the hamburger menu when toggled */
+  #hamburger-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5;
+    width: 100%;
+    z-index: 999;
+    padding-top: 60px;
+  }
+
+  /* Menu item styling */
+  #hamburger-menu li {
+    padding: 15px;
+  }
+
+  #hamburger-menu a {
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+
+  /* Show mobile language selector */
+  .mobile-language-selector {
+    display: block;
+  }
+
+  /* Hide desktop language selector on mobile */
+  .desktop-language-selector {
+    display: none;
+  }
+}
+
+/* On larger screens (tablet/desktop), show only the logo and desktop language selector */
+@media (min-width: 768px) {
+  /* Ensure the desktop version has no hamburger menu */
+  #hamburger-menu {
+    display: none !important;
   }
 
   .desktop-language-selector {
-    display: none; /* Hide on mobile */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  /* Ensure logo is properly positioned */
+  .logo {
+    display: block;
+    position: relative;
   }
 }

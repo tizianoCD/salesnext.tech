@@ -64,46 +64,46 @@
         <!-- ***** Logo End ***** -->
         <!-- ***** Menu Start ***** -->
         <!-- Hamburger Menu Button -->
-<!-- Hamburger Menu Button -->
-<button onclick="toggleMenu()" style="font-size: 30px; background: none; border: none; cursor: pointer; position: fixed; top: 10px; left: 10px; z-index: 1000;">&#9776;</button>
 
-<!-- Hamburger Menu -->
-<ul id="hamburger-menu" class="nav">
-  <li>
-    <a href="top" id="home-link">Home</a>
-  </li>
+        <!-- Navigation with Logo and Hamburger Icon -->
+<nav class="main-nav">
+  <!-- Logo -->
+  <a href="/" class="logo">
+    <img src="assets/images/logo-v3.png" alt="SalesNext Consulting Logo">
+  </a>
 
-  <li>
-    <a href="about" id="about-link">About</a>
-  </li>
+  <!-- Hamburger Icon (only visible on mobile) -->
+  <div id="hamburger-icon" onclick="toggleMenu()" style="display: none;">
+    &#9776; <!-- This is the icon (three horizontal lines) -->
+  </div>
 
-  <li>
-    <a href="services" id="services-link">Services</a>
-  </li>
+  <!-- Navigation Menu (Hamburger) -->
+  <ul id="hamburger-menu" class="nav">
+    <li><a href="top" id="home-link">Home</a></li>
+    <li><a href="about" id="about-link">About</a></li>
+    <li><a href="services" id="services-link">Services</a></li>
+    <li>
+      <div class="border-first-button">
+        <a href="contact" id="contact-link">Contact Us</a>
+      </div>
+    </li>
+    <!-- Mobile Language Selector -->
+    <li class="mobile-language-selector">
+      <select id="language-selector-mobile" onchange="switchLanguage()">
+        <option value="en" selected>English</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </li>
+  </ul>
 
-  <li>
-    <div class="border-first-button">
-      <a href="contact" id="contact-link">Contact Us</a>
-    </div>
-  </li>
-
-  <!-- Language selector for mobile -->
-  <li class="mobile-language-selector">
-    <select id="language-selector-mobile" onchange="switchLanguage()">
-      <option value="en" selected>English</option>
-      <option value="de">Deutsch</option>
-    </select>
-  </li>
-
-  <!-- Language selector for desktop -->
-  <li class="desktop-language-selector">
+  <!-- Desktop Language Selector (Always Visible on Desktop) -->
+  <div class="desktop-language-selector">
     <select id="language-selector-desktop" onchange="switchLanguage()">
       <option value="en" selected>English</option>
       <option value="de">Deutsch</option>
     </select>
-  </li>
-</ul>
-
+  </div>
+</nav>
 
         <!-- ***** Menu End ***** -->
       </nav>
