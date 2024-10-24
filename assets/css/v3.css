@@ -730,6 +730,14 @@ header
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
+  .header-area .main-nav .nav li a {
+    height: 50px !important;
+    line-height: 50px !important;
+    padding: 0px !important;
+    border: none !important;
+    background: #f7f7f7 !important;
+    color: #191a20 !important;
+  }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
     color: #4da6e7!important;
@@ -2334,5 +2342,9 @@ textarea {
   background-color: white;
   color: #007BFF;
 }
+
+
+
+
 
 
