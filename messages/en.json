@@ -1,0 +1,75 @@
+{
+  "aboutSection": {
+    "title": "About Us",
+    "paragraph": "SalesNext is a consulting firm specializing in Salesforce implementation and CRM solutions. We help businesses streamline sales processes, improve customer relationships, and drive growth through customized Salesforce integrations. Our expert team is committed to optimizing operations, boosting productivity, and ensuring long-term success.",
+    "listItems": [
+      "High-quality service",
+      "Expert team",
+      "Customer satisfaction",
+      "Innovative solutions",
+      "Timely delivery",
+      "Support, Training and maintenance"
+    ]
+  },
+  "menu": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About"
+  },
+  "header": {
+    "contactUs": "Contact"
+  },
+  "hero": {
+    "contactUs": "🚀 Contact Us",
+    "title": "Your Salesforce Consulting Experts",
+    "subtitle": "Boost Business Performance with Tailored Solutions",
+    "description": "SalesNext Consulting provides expert Salesforce implementations and custom solutions to streamline your operations and drive growth."
+  },
+  "servicesSection": {
+    "title": "Our Services",
+    "paragraph": "Your business deserves the best. Our agency provides a wide range of services designed to help you succeed. Our offerings include:"
+  },
+  "features": {
+    "salesCloud": {
+      "title": "Sales Cloud",
+      "paragraph": "Sales Cloud is Salesforce’s powerful sales automation platform that boosts performance with tools for lead management, opportunity tracking, and streamlined processes."
+    },
+    "marketingCloud": {
+      "title": "Marketing Cloud",
+      "paragraph": "Marketing Cloud is Salesforce’s all-in-one digital marketing platform that engages customers across channels."
+    },
+    "serviceCloud": {
+      "title": "Service Cloud",
+      "paragraph": "Service Cloud is Salesforce’s customer service platform that helps businesses deliver exceptional support."
+      },
+    "experienceCloud": {
+      "title": "Experience Cloud",
+      "paragraph": "Experience Cloud is Salesforce’s platform for creating branded customer experiences through portals and communities. It provides personalized content and self-service options, fostering engagement and loyalty."
+    },
+    "salesforceIntegrations": {
+      "title": "Salesforce Integrations",
+      "paragraph": "Salesforce integrations connect systems and data sources for streamlined workflows. They enhance data accuracy and insights, automate tasks, and optimize operations for seamless performance."
+    },
+    "einsteinAI": {
+      "title": "Einstein AI",
+      "paragraph": "Einstein AI is Salesforce's AI platform that enhances customer interactions and informs decisions. It uses machine learning for personalized experiences and actionable insights, empowering teams to make data-driven choices."
+    }
+    },
+  "footerSection": {
+    "title": "Copyright © 2024 Salesnext Gmbh. All Rights Reserved."
+  },
+  "contactSection": {
+    "title": "Need Help?",
+    "subtitle": "Get In Touch With Us Now",
+    "name": "Your Name",
+    "nameplaceholder": "Enter your name",
+    "email": "Your Email",
+    "emailplaceholder": "Enter your email",
+    "company": "Your Company",
+    "companyplaceholder": "Enter your company name",
+    "message": "Your Message",
+    "messageplaceholder": "Enter your message",
+    "submitbutton": "Send",
+    "successMessage": "Thank you! Your message has been sent successfully."
+  }
+}
