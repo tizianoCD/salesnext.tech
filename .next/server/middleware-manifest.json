@@ -1,5 +1,6 @@
 {
   "version": 3,
+<<<<<<< HEAD
   "middleware": {
     "/": {
       "files": [
@@ -22,8 +23,9 @@
       }
     }
   },
+=======
+  "middleware": {},
+>>>>>>> 5b3a805 (tt)
   "functions": {},
-  "sortedMiddleware": [
-    "/"
-  ]
+  "sortedMiddleware": []
 }

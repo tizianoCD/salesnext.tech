@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 const Breadcrumb = ({
-  pageName
+  pageName,
+  description,
 }: {
   pageName: string;
+  description: string;
 }) => {
   return (
     <>
@@ -16,6 +18,7 @@ const Breadcrumb = ({
                   {pageName}
                 </h1>
                 <p className="text-base font-medium leading-relaxed text-body-color">
+                  {description}
                 </p>
               </div>
             </div>

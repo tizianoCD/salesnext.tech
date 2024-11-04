@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 {
   "/[locale]/services/page": "app/[locale]/services/page.js",
   "/[locale]/about/page": "app/[locale]/about/page.js",
   "/[locale]/page": "app/[locale]/page.js"
 }
+=======
+{}
+>>>>>>> 5b3a805 (tt)
