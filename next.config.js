@@ -12,4 +12,5 @@ const nextConfig = {
   assetPrefix: '/webJs/', // Replace with your repository name
 };
 
+
 module.exports = withNextIntl(nextConfig);
