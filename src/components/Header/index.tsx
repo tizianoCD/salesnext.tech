@@ -1,31 +1,37 @@
-// src/components/Header/index.tsx
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation"; 
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
-import getMenuData from "./menuData";
+import getMenuData from "./menuData"; // Adjusted for translated menu
 import { useLocale, useTranslations } from 'next-intl';
 
 const Header = () => {
   const locale = useLocale();
-  const t = useTranslations('header');
+  const t = useTranslations('header'); // Load translations for the 'header' namespace
   const [navbarOpen, setNavbarOpen] = useState(false);
+  
+  const navbarToggleHandler = () => {
+    setNavbarOpen(!navbarOpen);
+  };
+
   const [sticky, setSticky] = useState(false);
-
-  const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
-  const handleStickyNavbar = () => setSticky(window.scrollY >= 80);
-
+  
+  const handleStickyNavbar = () => {
+    setSticky(window.scrollY >= 80);
+  };
+  
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
     return () => window.removeEventListener("scroll", handleStickyNavbar);
   }, []);
 
   const usePathName = usePathname();
-  const menuData = getMenuData(t); // Pass 't' to getMenuData
+  const menuData = getMenuData(); // Call the function to get translated menu data
   const fullPathContact = `/${locale}/contact`;
+
 
   return (
     <header
@@ -40,7 +46,9 @@ const Header = () => {
           <div className="w-60 max-w-full px-4 xl:mr-12">
             <Link
               href={`/${locale}`} 
-              className={`header-logo block w-full ${sticky ? "py-5 lg:py-2" : "py-8"}`}
+              className={`header-logo block w-full ${
+                sticky ? "py-5 lg:py-2" : "py-8"
+              } `}
             >
               <Image
                 src="/images/logo/logo-2.svg"
@@ -112,6 +120,7 @@ const Header = () => {
               </nav>
             </div>
             <div className="flex items-center justify-end pr-16 lg:pr-0">
+
               <Link
                 href={fullPathContact}
                 className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"

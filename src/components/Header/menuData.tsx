@@ -6,19 +6,23 @@ export interface MenuItem {
   path: string;
 }
 
-const getMenuData = (t: (key: string) => string): MenuItem[] => {
+// Create a function that returns the menu data based on the current locale
+const getMenuData = () => {
+  const t = useTranslations('menu'); // Load translations for the 'menu' namespace
+
+  // Return the translated menu data
   return [
     {
-      title: t('home'),
-      path: "/",
+      title: t('home'), // Access translation for 'home'
+      path: "/", // Main page
     },
     {
-      title: t('services'),
-      path: "/services",
+      title: t('services'), // Access translation for 'services'
+      path: "/services", // Services page
     },
     {
-      title: t('about'),
-      path: "/about",
+      title: t('about'), // Access translation for 'about'
+      path: "/about", // About page
     },
   ];
 };

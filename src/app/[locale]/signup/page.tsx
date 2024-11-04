@@ -8,13 +8,6 @@ export const metadata: Metadata = {
   // other metadata
 };
 
-export const generateStaticParams = async () => {
-  return [
-    { locale: 'en' }, // Add the locales you want to support
-    { locale: 'es' }, // Example of another locale
-  ];
-};
-
 const SignupPage = () => {
   return (
     <>
