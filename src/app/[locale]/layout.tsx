@@ -1,16 +1,15 @@
-// src/app/[locale]/layout.tsx
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Inter } from "next/font/google";
-//import "node_modules/react-modal-video/css/modal-video.css";
 import "../../styles/index.css";
 import { Providers } from "./providers";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { notFound } from 'next/navigation';
-import { locales } from '@/i18n/routing';
+import { notFound } from "next/navigation";
+import Script from "next/script"; // Import Next.js Script component
+import { locales } from "@/i18n/routing";
 
 type Props = {
   children: ReactNode;
@@ -30,7 +29,23 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <head />
+      <head>
+        {/* Add Google Analytics Script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=463915246`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '463915246', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Providers>
