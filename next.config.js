@@ -1,8 +1,8 @@
-/**const createNextIntlPlugin = require('next-intl/plugin');
- 
+const createNextIntlPlugin = require('next-intl/plugin');
+
 const withNextIntl = createNextIntlPlugin();
- 
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
- 
-//*module.exports = withNextIntl(nextConfig);
+module.exports = withNextIntl({
+  // Your other Next.js configuration options here
+});
