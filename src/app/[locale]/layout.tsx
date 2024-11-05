@@ -32,7 +32,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
       <head>
         {/* Add Google Analytics Script */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=463915246`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-7SDQZBCCS6`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -40,7 +40,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '463915246', {
+            gtag('config', 'G-7SDQZBCCS6', {
               page_path: window.location.pathname,
             });
           `}
