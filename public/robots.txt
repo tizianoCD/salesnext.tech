@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.salesnext.tech
+
+# Sitemaps
+Sitemap: https://www.salesnext.tech/sitemap.xml
