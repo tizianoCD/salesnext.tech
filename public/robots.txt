@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.salesnext.tech
+Host: https://salesnext.tech
 
 # Sitemaps
-Sitemap: https://www.salesnext.tech/sitemap.xml
+Sitemap: https://salesnext.tech/sitemap.xml
