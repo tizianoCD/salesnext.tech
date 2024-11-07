@@ -1,14 +1,14 @@
 // next-sitemap.config.js
 
 /** @type {import('next-sitemap').IConfig} */
-const siteUrl = 'https://salesnext.tech';
+const siteUrl = 'https://www.salesnext.tech'; // Use www in the base URL
 
 module.exports = {
   siteUrl,
   generateRobotsTxt: true,
   changefreq: 'daily',
   priority: 0.7,
-  sitemapSize: 1000, // Increase this to include all URLs in one sitemap file
+  sitemapSize: 1000, // Ensures all URLs in one file if desired
   async additionalPaths() {
     const locales = ['en', 'de'];
     const paths = ['', 'about', 'contact', 'error'];
