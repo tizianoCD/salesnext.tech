@@ -58,6 +58,9 @@
   "footerSection": {
     "title": "Copyright © 2024 Salesnext Gmbh. All Rights Reserved."
   },
+  "brandSection":{
+    "title" : "Our satisfied customers"
+  },
   "contactSection": {
     "title": "Need Help?",
     "subtitle": "Get In Touch With Us Now",

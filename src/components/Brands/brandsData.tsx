@@ -1,6 +1,7 @@
 import { Brand } from "@/types/brand";
 
 const brandsData: Brand[] = [
+  
   {
     id: 1,
     name: "Hair & Skin Medical AG",

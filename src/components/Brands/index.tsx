@@ -1,11 +1,18 @@
 import { Brand } from "@/types/brand";
 import Image from "next/image";
 import brandsData from "./brandsData";
+import { useTranslations } from "next-intl";
 
 const Brands = () => {
+
+  const t = useTranslations("brandSection"); //
+
   return (
     <section className="pt-1">
       <div className="container">
+      <h2 className="text-center text-2xl font-bold mb-6">
+          {t("title")}
+        </h2>
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="flex flex-wrap items-center justify-center gap-6 rounded-sm bg-gray-light px-8 py-8 dark:bg-gray-dark sm:px-10 md:px-[20px] md:py-[20px] xl:p-[20px] 2xl:px-[30px] 2xl:py-[30px]">

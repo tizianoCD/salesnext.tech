@@ -1,7 +1,7 @@
 {
   "aboutSection": {
     "title": "Über uns",
-    "paragraph": "SalesNext ist ein Beratungsunternehmen, das sich auf Salesforce-Implementierungen und CRM-Lösungen spezialisiert hat. Wir helfen Unternehmen dabei, Vertriebsprozesse zu optimieren, Kundenbeziehungen zu verbessern und Wachstum durch maßgeschneiderte Salesforce-Integrationen zu fördern. Unser Expertenteam ist bestrebt, Ihre Abläufe zu optimieren, die Produktivität zu steigern und nachhaltigen Erfolg sicherzustellen.",
+    "paragraph": "SalesNext ist ein Beratungsunternehmen, das sich auf Salesforce-Implementierungen und CRM-Lösungen spezialisiert hat. Wir helfen Unternehmen dabei, Vertriebsprozesse zu optimieren, Kundenbeziehungen zu verbessern und Wachstum durch massgeschneiderte Salesforce-Integrationen zu fördern. Unser Expertenteam ist bestrebt, Ihre Abläufe zu optimieren, die Produktivität zu steigern und nachhaltigen Erfolg sicherzustellen.",
     "listItems": [
       "Hochwertiger Service",
       "Experten-Team",
@@ -22,12 +22,12 @@
     "about": "Über Uns"
   },
   "header": {
-    "contactUs": "Kontact"
+    "contactUs": "Kontakt"
   },
   "hero": {
-    "contactUs": "🚀 Kontakt Uns",
+    "contactUs": "Kontakt",
     "title": "Ihre Experten für Salesforce-Beratung",
-    "subtitle": "Steigern Sie die Unternehmensleistung mit maßgeschneiderten Lösungen",
+    "subtitle": "Steigern Sie die Unternehmensleistung mit massgeschneiderten Lösungen",
     "description": "SalesNext Consulting bietet fachkundige Salesforce-Implementierungen und benutzerdefinierte Lösungen, um Ihre Abläufe zu optimieren und Ihr Wachstum zu fördern."
   },
     "features": {
@@ -41,7 +41,7 @@
       },
       "serviceCloud": {
         "title": "Service Cloud",
-        "paragraph": "Service Cloud ist die Kundenserviceplattform von Salesforce, die Unternehmen dabei unterstützt, außergewöhnliche Unterstützung zu bieten."
+        "paragraph": "Service Cloud ist die Kundenserviceplattform von Salesforce, die Unternehmen dabei unterstützt, aussergewöhnliche Unterstützung zu bieten."
       },
       "experienceCloud": {
         "title": "Experience Cloud",
@@ -59,6 +59,9 @@
     "footerSection": {
       "title": "Copyright © 2024 Salesnext Gmbh. Alle Rechte vorbehalten."
     },
+    "brandSection":{
+    "title" : "Unsere zufriedenen Kunden"
+  },
     "contactSection": {
     "title": "Brauchen Sie Hilfe?",
     "subtitle": "Kontaktieren Sie uns jetzt",
