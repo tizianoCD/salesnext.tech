@@ -18,11 +18,12 @@
   },
   "header": {
     "contactUs": "Contact"
-  },"hero": {
-  "contactUs": "🚀 Contact Us",
-  "title": "Transform Your Business with Expert Salesforce Consulting and Implementation",
-  "subtitle": "Boost Business Performance with Tailored Solutions",
-  "description": "SalesNext Consulting provides expert Salesforce implementations and custom solutions to streamline your operations, improve CRM processes, automate workflows, and drive business growth."
+  },
+  "hero": {
+    "contactUs": "🚀 Contact Us",
+    "title": "Your Salesforce Consulting Experts",
+    "subtitle": "Boost Business Performance with Tailored Solutions",
+    "description": "SalesNext Consulting provides expert Salesforce implementations and custom solutions to streamline your operations and drive growth."
   },
   "servicesSection": {
     "title": "Our Services",
