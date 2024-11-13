@@ -30,6 +30,12 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        {/* Favicon Link */}
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Apple Touch Icon for iOS devices */}
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
         {/* Add Google Analytics Script */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=G-7SDQZBCCS6`}

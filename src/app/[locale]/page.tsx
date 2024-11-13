@@ -7,10 +7,10 @@ import Brands from "@/components/Brands";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SalesNext Consulting",
-  description: "Description",
-  // other metadata
+  title: "SalesNext - Expert Salesforce Consulting & Implementation",
+  description: "SalesNext Consulting specializes in Salesforce consulting and implementation, helping businesses optimize CRM and drive growth with custom solutions."
 };
+  
 
 export default function Home() {
   return (
